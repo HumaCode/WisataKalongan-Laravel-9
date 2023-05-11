@@ -136,60 +136,13 @@
                             </li>
                         </ul>
 
-                        <a href="#" class="btn bg-cyan btn-block btn-flat btn-sm"><b>Reset Password</b></a>
+                        <a href="{{ route('ubah.password') }}" class="btn bg-cyan btn-block btn-flat btn-sm"><b>Ubah
+                                Password</b></a>
                     </div>
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
             </section>
-
-            {{-- <div class="col-md-4">
-                <div class="card card-outline card-cyan">
-                    <div class="card-header">
-                        <h3 class="card-title">Ubah Password</h3>
-
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                        </div>
-                        <!-- /.card-tools -->
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-
-                        <form method="post" action="{{ route('profile.store') }}">
-                            @csrf
-
-                            <div class="form-group">
-                                <label for="old_password">Password Lama</label>
-                                <input type="password" name="old_password" class="form-control form-control-sm"
-                                    style="border-radius: 0px;" id="old_password">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="new_password">Password Baru</label>
-                                <input type="password" name="new_password" class="form-control form-control-sm"
-                                    style="border-radius: 0px;" id="new_password">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="new_password_confirm">Ulangi Password</label>
-                                <input type="password" name="new_password_confirm" class="form-control form-control-sm"
-                                    style="border-radius: 0px;" id="new_password_confirm">
-                            </div>
-
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <button type="submit" class="btn bg-cyan btn-sm btn-flat btn-block"><i
-                                class="fas fa-pencil-alt"></i>
-                            &nbsp;
-                            Ubah Pawwsord</button>
-                    </div>
-                    </form>
-                </div>
-            </div> --}}
 
         </div>
 

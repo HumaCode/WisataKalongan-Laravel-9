@@ -32,11 +32,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-// profile
+
 Route::middleware('auth')->group(function () {
 
+    // profile
     Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
     Route::post('/profile/store', [AdminController::class, 'profileStore'])->name('profile.store');
+    Route::get('/ubah/password', [AdminController::class, 'ubahPassword'])->name('ubah.password');
+    Route::post('/update/password', [AdminController::class, 'updatePassword'])->name('update.password');
 
 
 

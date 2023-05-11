@@ -82,7 +82,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="{{ route('ubah.password') }}"
+                                class="nav-link {{ ($submenu == 'sub_ubah_password') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Reset Password</p>
                             </a>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -54,5 +55,45 @@ class AdminController extends Controller
         );
 
         return redirect()->back()->with($notification);
+    }
+
+    public function ubahPassword()
+    {
+        $title      = "Ubah Password";
+        $menu       = "profile";
+        $submenu    = "sub_ubah_password";
+
+        return view('admin.ubah_password', compact('title', 'menu', 'submenu'));
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+
+
+            $notification = array(
+                'message'       => 'Password tidak cocok..!!',
+                'alert-type'    => 'error',
+            );
+
+            return back()->with($notification);
+        }
+
+        // update new Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        $notification = array(
+            'message'       => 'Password berhasil diubah',
+            'alert-type'    => 'success',
+        );
+
+        return back()->with($notification);
     }
 }
