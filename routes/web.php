@@ -16,11 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+
+
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+
+    $title = 'Dashboard';
+
+    return view('index', compact('title'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
