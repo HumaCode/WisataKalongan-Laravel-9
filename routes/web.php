@@ -29,9 +29,16 @@ Route::get('/dashboard', function () {
     return view('index', compact('title'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+// profile
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
+    Route::post('/profile/store', [AdminController::class, 'profileStore'])->name('profile.store');
+
+
+
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 

@@ -15,7 +15,7 @@
                     class="img-circle elevation-2" alt="{{ $adminData->name }}">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ $adminData->name }}</a>
+                <a href="{{ route('admin.profile') }}" class="d-block">{{ $adminData->name }}</a>
             </div>
         </div>
 

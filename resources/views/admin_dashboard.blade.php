@@ -23,6 +23,8 @@ $adminData = App\Models\User::find($id);
     <link rel="stylesheet"
         href="{{ asset('backend') }}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"> --}}
     <!-- iCheck -->
+
+
     {{--
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/icheck-bootstrap/icheck-bootstrap.min.css"> --}}
     <!-- JQVMap -->
@@ -35,8 +37,8 @@ $adminData = App\Models\User::find($id);
     {{--
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/daterangepicker/daterangepicker.css"> --}}
     <!-- summernote -->
-    {{--
-    <link rel="stylesheet" href="{{ asset('backend') }}/plugins/summernote/summernote-bs4.min.css"> --}}
+
+    <link rel="stylesheet" href="{{ asset('backend') }}/plugins/summernote/summernote-bs4.min.css">
 </head>
 
 <body class="layout-navbar-fixed text-sm layout-fixed">
@@ -131,6 +133,8 @@ $adminData = App\Models\User::find($id);
     <!-- Tempusdominus Bootstrap 4 -->
     {{-- <script src="{{ asset('backend') }}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
     </script> --}}
+    <!-- bs-custom-file-input -->
+    <script src="{{ asset('backend') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- Summernote -->
     {{-- <script src="{{ asset('backend') }}/plugins/summernote/summernote-bs4.min.js"></script> --}}
     <!-- overlayScrollbars -->
