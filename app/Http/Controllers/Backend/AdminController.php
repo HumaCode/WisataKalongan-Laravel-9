@@ -19,8 +19,10 @@ class AdminController extends Controller
         $id         = Auth::user()->id;
         $adminData  = User::find($id);
         $title      = "Profile";
+        $menu       = "profile";
+        $submenu    = "sub_profile";
 
-        return view('admin.profile', compact('adminData', 'title'));
+        return view('admin.profile', compact('adminData', 'submenu', 'menu', 'title'));
     }
 
     public function profileStore(Request $request)

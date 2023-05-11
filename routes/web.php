@@ -24,9 +24,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
 
-    $title = 'Dashboard';
+    $title      = 'Dashboard';
+    $menu       = '';
+    $submenu    = 'dashboard';
 
-    return view('index', compact('title'));
+    return view('index', compact('title', 'submenu', 'menu'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 

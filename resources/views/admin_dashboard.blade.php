@@ -37,8 +37,10 @@ $adminData = App\Models\User::find($id);
     {{--
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/daterangepicker/daterangepicker.css"> --}}
     <!-- summernote -->
+    {{--
+    <link rel="stylesheet" href="{{ asset('backend') }}/plugins/summernote/summernote-bs4.min.css"> --}}
 
-    <link rel="stylesheet" href="{{ asset('backend') }}/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 </head>
 
 <body class="layout-navbar-fixed text-sm layout-fixed">
@@ -145,6 +147,34 @@ $adminData = App\Models\User::find($id);
     {{-- <script src="{{ asset('backend') }}/dist/js/demo.js"></script> --}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('backend') }}/dist/js/pages/dashboard.js"></script>
+
+    {{-- validation with js --}}
+    <script src="{{ asset('backend') }}/js/validate.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch(type){
+            case 'info':
+            toastr.info(" {{ Session::get('message') }} ");
+            break;
+
+            case 'success':
+            toastr.success(" {{ Session::get('message') }} ");
+            break;
+
+            case 'warning':
+            toastr.warning(" {{ Session::get('message') }} ");
+            break;
+
+            case 'error':
+            toastr.error(" {{ Session::get('message') }} ");
+            break; 
+        }
+        @endif 
+    </script>
 </body>
 
 </html>

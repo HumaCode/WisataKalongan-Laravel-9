@@ -27,7 +27,7 @@
                 <li class="nav-header">Menu Utama</li>
 
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link active">
+                    <a href="{{ url('/dashboard') }}" class="nav-link {{ ($submenu == 'dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -63,6 +63,34 @@
                 <div class="user-panel  pb-3  d-flex">
 
                 </div>
+                <li class="nav-header">Pengaturan</li>
+
+                <li class="nav-item {{ ($menu == 'profile') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ ($menu == 'profile') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Profile
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item ">
+                            <a href="{{ route('admin.profile') }}"
+                                class="nav-link {{ ($submenu == 'sub_profile') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Edit Profil</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/charts/flot.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Reset Password</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
 
                 <li class="nav-item">
 

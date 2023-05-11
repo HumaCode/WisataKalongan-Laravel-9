@@ -28,22 +28,17 @@
 <section class="content">
     <div class="container-fluid">
 
-        <div class="col-md-12">
-            <div class="card card-outline card-cyan">
-                <div class="card-header">
-                    <h3 class="card-title">{{ $adminData->name }}</h3>
+        <div class="row">
 
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
+            <section class="col-md-8 connectedSortable">
+                <div class="card card-outline card-cyan">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ $adminData->name }}</h3>
+
+
                     </div>
-                    <!-- /.card-tools -->
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
 
-                    <form method="post" action="{{ route('profile.store') }}" enctype="multipart/form-data">
+                    <form id="myForm" method="post" action="{{ route('profile.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="card-body">
@@ -105,21 +100,97 @@
                                     class="profile-user-img img-fluid img-circle" alt="profile-image">
                             </div>
 
-
                         </div>
                         <!-- /.card-body -->
-
                         <div class="card-footer">
                             <button type="submit" class="btn bg-cyan btn-sm btn-flat"><i class="fas fa-pencil-alt"></i>
                                 &nbsp;
-                                Ubah</button>
+                                Ubah Profil</button>
                         </div>
                     </form>
-
                 </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+                <!-- /.card -->
+            </section>
+
+            <section class="col-md-4 connectedSortable">
+                <div class="card card-cyan card-outline">
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle"
+                                src="{{ (!empty($adminData->photo)) ? url('backend/img/' . $adminData->photo) : url('backend/img/user.png') }}"
+                                alt="User profile picture">
+                        </div>
+
+                        <h3 class="profile-username text-center">{{ $adminData->name }}</h3>
+
+                        <p class="text-muted text-center">{{ $adminData->email }}</p>
+
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>Username</b> <a class="float-right">{{ $adminData->username }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>No. Hp</b> <a class="float-right">{{ $adminData->phone }}</a>
+                            </li>
+                        </ul>
+
+                        <a href="#" class="btn bg-cyan btn-block btn-flat btn-sm"><b>Reset Password</b></a>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </section>
+
+            {{-- <div class="col-md-4">
+                <div class="card card-outline card-cyan">
+                    <div class="card-header">
+                        <h3 class="card-title">Ubah Password</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.card-tools -->
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+
+                        <form method="post" action="{{ route('profile.store') }}">
+                            @csrf
+
+                            <div class="form-group">
+                                <label for="old_password">Password Lama</label>
+                                <input type="password" name="old_password" class="form-control form-control-sm"
+                                    style="border-radius: 0px;" id="old_password">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="new_password">Password Baru</label>
+                                <input type="password" name="new_password" class="form-control form-control-sm"
+                                    style="border-radius: 0px;" id="new_password">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="new_password_confirm">Ulangi Password</label>
+                                <input type="password" name="new_password_confirm" class="form-control form-control-sm"
+                                    style="border-radius: 0px;" id="new_password_confirm">
+                            </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn bg-cyan btn-sm btn-flat btn-block"><i
+                                class="fas fa-pencil-alt"></i>
+                            &nbsp;
+                            Ubah Pawwsord</button>
+                    </div>
+                    </form>
+                </div>
+            </div> --}}
+
         </div>
 
     </div><!-- /.container-fluid -->
@@ -142,6 +213,56 @@
             reader.readAsDataURL(e.target.files['0']);
         })
     })
+
+
+    // validation with js
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                name: {
+                    required : true,
+                },  
+                username: {
+                    required : true,
+                },  
+                email: {
+                    required : true,
+                },  
+                phone: {
+                    required : true,
+                },  
+            },
+            messages :{
+                name: {
+                    required : 'Nama tidak boleh kosong',
+                }, 
+                username: {
+                    required : 'Username tidak boleh kosong',
+                }, 
+                email: {
+                    required : 'Email tidak boleh kosong',
+                }, 
+                phone: {
+                    required : 'No. Hp tidak boleh kosong',
+                }, 
+
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+
+    
 </script>
+
 
 @endsection
