@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\DestinasiController;
+use App\Http\Controllers\Backend\KategoriController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +47,17 @@ Route::middleware('auth')->group(function () {
 
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::controller(KategoriController::class)->group(function () {
+    Route::get('/kategori', 'index')->name('kategori');
+    Route::post('/insert/kategori', 'insertKategori')->name('insert.kategori');
+    Route::post('/update/kategori', 'updateKategori')->name('update.kategori');
+    Route::get('/hapus/kategori/{id}', 'hapusKategori')->name('hapus.kategori');
+});
+
+Route::controller(DestinasiController::class)->group(function () {
+    Route::get('/destinasi', 'ubahPassword')->name('destinasi');
 });
 
 require __DIR__ . '/auth.php';

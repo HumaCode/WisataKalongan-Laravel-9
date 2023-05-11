@@ -35,26 +35,36 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ url('/kategori') }}"
+                        class="nav-link {{ ($submenu == 'sub_kategori') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-th"></i>
+                        <p>
+                            Kategori
+                        </p>
+                    </a>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fa fa-map-marker"></i>
                         <p>
-                            Charts
+                            Wisata
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <a href="{{ route('destinasi') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ChartJS</p>
+                                <p>Destinasi</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/charts/flot.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Flot</p>
+                                <p>Even</p>
                             </a>
                         </li>
                     </ul>

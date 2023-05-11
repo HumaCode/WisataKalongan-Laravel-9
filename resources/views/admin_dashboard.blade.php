@@ -41,6 +41,8 @@ $adminData = App\Models\User::find($id);
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/summernote/summernote-bs4.min.css"> --}}
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
+    @stack('css')
 </head>
 
 <body class="layout-navbar-fixed text-sm layout-fixed">
@@ -152,6 +154,8 @@ $adminData = App\Models\User::find($id);
     <script src="{{ asset('backend') }}/js/validate.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    @stack('scripts')
 
     <script>
         @if(Session::has('message'))
