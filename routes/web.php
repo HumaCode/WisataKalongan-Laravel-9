@@ -57,7 +57,7 @@ Route::controller(KategoriController::class)->group(function () {
 });
 
 Route::controller(DestinasiController::class)->group(function () {
-    Route::get('/destinasi', 'ubahPassword')->name('destinasi');
+    Route::get('/destinasi', 'index')->name('destinasi');
 });
 
 require __DIR__ . '/auth.php';

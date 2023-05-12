@@ -46,17 +46,18 @@
                 </li>
 
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-map-marker"></i>
-                        <p>
-                            Wisata
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
+                <li class="nav-item {{ ($menu == 'destinasi') ? 'menu-open' : '' }}"">
+                    <a href=" #" class="nav-link {{ ($menu == 'destinasi') ? 'active' : '' }}">
+                    <i class="nav-icon fa fa-map-marker"></i>
+                    <p>
+                        Wisata
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('destinasi') }}" class="nav-link">
+                            <a href="{{ route('destinasi') }}"
+                                class="nav-link {{ ($submenu == 'sub_destinasi') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Destinasi</p>
                             </a>
