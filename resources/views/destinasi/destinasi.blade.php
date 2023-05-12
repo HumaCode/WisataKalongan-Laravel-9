@@ -92,11 +92,11 @@
                                     Detail</a>
                                 &nbsp;
 
-                                <a href="" data-toggle="modal" class="btn btn-success btn-sm btn-flat"><i
-                                        class=" fa fa-edit"></i>&nbsp;
+                                <a href="{{ route('ubah.destinasi', $item->slug) }}"
+                                    class="btn btn-success btn-sm btn-flat"><i class=" fa fa-edit"></i>&nbsp;
                                     Ubah</a>
                                 &nbsp;
-                                <a href="{{ route('hapus.kategori', $item->id) }}"
+                                <a href="{{ route('hapus.destinasi', $item->slug) }}"
                                     class="btn btn-danger btn-sm btn-flat" id="delete"><i
                                         class=" fa fa-trash"></i>&nbsp;
                                     Hapus</a>

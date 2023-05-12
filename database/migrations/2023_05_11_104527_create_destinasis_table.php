@@ -16,13 +16,15 @@ return new class extends Migration
         Schema::create('destinasis', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('slug')->nullable();
             $table->integer('kategori_id');
             $table->string('alamat');
             $table->string('lokasi');
             $table->int('dilihat');
             $table->int('tiket');
             $table->int('harga_tiket');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
+            $table->string('deskripsi_singkat');
             $table->timestamps();
         });
     }

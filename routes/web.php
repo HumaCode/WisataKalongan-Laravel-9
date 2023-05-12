@@ -47,19 +47,26 @@ Route::middleware('auth')->group(function () {
 
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+    Route::controller(KategoriController::class)->group(function () {
+        Route::get('/kategori', 'index')->name('kategori');
+        Route::post('/insert/kategori', 'insertKategori')->name('insert.kategori');
+        Route::post('/update/kategori', 'updateKategori')->name('update.kategori');
+        Route::get('/hapus/kategori/{id}', 'hapusKategori')->name('hapus.kategori');
+    });
+
+    Route::controller(DestinasiController::class)->group(function () {
+        Route::get('/destinasi', 'index')->name('destinasi');
+        Route::get('/destinasi/checkSlug', 'checkSlug');
+        Route::get('/tambah/destinasi', 'tambahDestinasi')->name('tambah.destinasi');
+        Route::post('/store/destinasi', 'storeDestinasi')->name('store.destinasi');
+        Route::get('/ubah/destinasi/{slug}', 'ubahDestinasi')->name('ubah.destinasi');
+        Route::post('/update/destinasi', 'updateDestinasi')->name('update.destinasi');
+        Route::get('/hapus/destinasi/{slug}', 'hapusDestinasi')->name('hapus.destinasi');
+    });
 });
 
-Route::controller(KategoriController::class)->group(function () {
-    Route::get('/kategori', 'index')->name('kategori');
-    Route::post('/insert/kategori', 'insertKategori')->name('insert.kategori');
-    Route::post('/update/kategori', 'updateKategori')->name('update.kategori');
-    Route::get('/hapus/kategori/{id}', 'hapusKategori')->name('hapus.kategori');
-});
 
-Route::controller(DestinasiController::class)->group(function () {
-    Route::get('/destinasi', 'index')->name('destinasi');
-    Route::get('/tambah/destinasi', 'tambahDestinasi')->name('tambah.destinasi');
-    Route::post('/store/destinasi', 'storeDestinasi')->name('store.destinasi');
-});
 
 require __DIR__ . '/auth.php';
