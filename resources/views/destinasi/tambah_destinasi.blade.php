@@ -61,13 +61,13 @@
             <!-- /.card-header -->
             <div class="card-body">
 
-                <form id="myForm" method="post" action="{{ route('store.destinasi') }}">
+                <form id="myForm" method="post" action="{{ route('store.destinasi') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="nama">Nama Destinnasi</label>
+                                <label for="nama">Nama Destinasi</label>
                                 <input type="text" name="nama" class="form-control form-control-sm"
                                     style="border-radius: 0px;" id="nama">
                             </div>
@@ -99,22 +99,12 @@
 
 
                             <div id="g" style="display: none;" class="mt-1">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <div class="custom-control custom-checkbox mb-1">
-                                            <input class="custom-control-input" name="tiket" type="checkbox"
-                                                id="customCheckbox2" value="0">
-                                            <label for="customCheckbox2" class="custom-control-label">Ya</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="form-group">
-                                            <input type="number" min="0" name="harga_tiket"
-                                                class="form-control form-control-sm" style="border-radius: 0px;"
-                                                id="harga_tiket" placeholder="Masukan Harga Tiket"
-                                                style="display: none;">
-                                        </div>
-                                    </div>
+
+
+                                <div class="form-group">
+                                    <input type="number" min="0" name="harga_tiket" class="form-control form-control-sm"
+                                        style="border-radius: 0px;" id="harga_tiket" placeholder="Masukan Harga Tiket"
+                                        style="display: none;">
                                 </div>
 
 
@@ -149,7 +139,7 @@
 
                     <div class="form-group">
                         <label for="editor">Deskripsi</label>
-                        <textarea name="descripsi" id="editor" rows="5" class="form-control form-control-sm"
+                        <textarea name="deskripsi" id="editor" rows="5" class="form-control form-control-sm"
                             style="border-radius: 0px;"></textarea>
                     </div>
 

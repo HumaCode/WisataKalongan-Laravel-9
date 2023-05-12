@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+{{-- ekko lightbox --}}
+<link rel="stylesheet" href="{{ asset('backend') }}/plugins/ekko-lightbox/ekko-lightbox.css">
 @endpush
 
 @section('admin')
@@ -49,17 +51,15 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tabel" class="table table-bordered table-striped">
+                <table id="tabel" class="table table-bordered table-striped projects">
                     <thead class="text-center">
                         <tr>
                             <th width="2%">No</th>
-                            <th>Nama Destinasi</th>
+                            <th width="200">Destinasi</th>
                             <th>Gambar</th>
                             <th>Kategori</th>
-                            <th>Tiket</th>
-                            <th>Buka</th>
                             <th>Lokasi</th>
-                            <th width="20%"><i class="fa fa-certificate"></i></th>
+                            <th width="30%"><i class="fa fa-certificate"></i></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,14 +69,29 @@
                         <tr>
                             <td class="text-center">{{ $key+1 }}. </td>
                             <td>{{ $item->nama }}</td>
-                            <td>{{ $item->gambar }}</td>
-                            <td>{{ $item->kategori_id }}</td>
-                            <td>{{ $item->tiket }}</td>
-                            <td>{{ $item->buka }}</td>
+                            <td class="text-center">
+
+                                <a href="{{ $item->gambar .'?' . $item->id }}" data-toggle="lightbox"
+                                    data-title="Preview Gambar">
+                                    <div class="zoom-effect">
+                                        <div class="kotak">
+                                            <img src="{{ $item->gambar .'?' . $item->id }}" class="img-fluid mb-2"
+                                                width="100" alt="white sample" />
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </td>
+                            <td>{{ $item->kategori->nama }}</td>
                             <td>{{ $item->lokasi }}</td>
 
 
-                            <td class="text-center">
+                            <td class=" text-center">
+                                <a href="" data-toggle="modal" class="btn bg-cyan btn-sm btn-flat"><i
+                                        class="fa fa-eye"></i>&nbsp;
+                                    Detail</a>
+                                &nbsp;
+
                                 <a href="" data-toggle="modal" class="btn btn-success btn-sm btn-flat"><i
                                         class=" fa fa-edit"></i>&nbsp;
                                     Ubah</a>
@@ -112,15 +127,18 @@
 <script src="{{ asset('backend') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="{{ asset('backend') }}/plugins/jszip/jszip.min.js"></script>
-<script src="{{ asset('backend') }}/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="{{ asset('backend') }}/plugins/pdfmake/vfs_fonts.js"></script>
+{{-- <script src="{{ asset('backend') }}/plugins/jszip/jszip.min.js"></script> --}}
+{{-- <script src="{{ asset('backend') }}/plugins/pdfmake/pdfmake.min.js"></script> --}}
+{{-- <script src="{{ asset('backend') }}/plugins/pdfmake/vfs_fonts.js"></script> --}}
 <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset('backend/js/code.js') }}"></script>
+
+{{-- ekko-lightbox --}}
+<script src="{{ asset('backend') }}/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
 
 <script>
     $(function () {
@@ -134,7 +152,24 @@
       });
     });
 
+
+    $(function () {
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true
+            });
+        });
+
+        $('.filter-container').filterizr({gutterPixels: 3});
+            $('.btn[data-filter]').on('click', function() {
+            $('.btn[data-filter]').removeClass('active');
+            $(this).addClass('active');
+        });
+    })
+
 </script>
+
 
 
 @endpush

@@ -12,8 +12,17 @@ class Destinasi extends Model
     protected $fillable = [
         'nama',
         'kategori_id',
+        'tiket',
+        'harga_tiket',
+        'buka',
         'alamat',
         'lokasi',
-        'deskripsi',
+        'descripsi',
+        'gambar',
     ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
+    }
 }
