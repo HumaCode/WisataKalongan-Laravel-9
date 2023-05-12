@@ -58,6 +58,8 @@ Route::controller(KategoriController::class)->group(function () {
 
 Route::controller(DestinasiController::class)->group(function () {
     Route::get('/destinasi', 'index')->name('destinasi');
+    Route::get('/tambah/destinasi', 'tambahDestinasi')->name('tambah.destinasi');
+    Route::post('/store/destinasi', 'storeDestinasi')->name('store.destinasi');
 });
 
 require __DIR__ . '/auth.php';

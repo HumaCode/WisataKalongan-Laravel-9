@@ -42,7 +42,7 @@
                 <h3 class="card-title">Daftar Destinasi Wisata</h3>
 
                 <div class="card-tools">
-                    <a href="" class="btn bg-cyan btn-flat btn-sm">
+                    <a href="{{ route('tambah.destinasi') }}" class="btn bg-cyan btn-flat btn-sm">
                         <i class="fas fa-plus"></i> &nbsp; Tambah
                     </a>
                 </div>

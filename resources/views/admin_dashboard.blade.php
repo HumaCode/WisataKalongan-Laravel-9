@@ -19,9 +19,9 @@ $adminData = App\Models\User::find($id);
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    {{--
+
     <link rel="stylesheet"
-        href="{{ asset('backend') }}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"> --}}
+        href="{{ asset('backend') }}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
 
 
@@ -130,13 +130,12 @@ $adminData = App\Models\User::find($id);
     <script src="{{ asset('backend') }}/plugins/jqvmap/jquery.vmap.min.js"></script>
     <script src="{{ asset('backend') }}/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
-    {{-- <script src="{{ asset('backend') }}/plugins/jquery-knob/jquery.knob.min.js"></script> --}}
+    <script src="{{ asset('backend') }}/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
-    {{-- <script src="{{ asset('backend') }}/plugins/moment/moment.min.js"></script> --}}
+    <script src="{{ asset('backend') }}/plugins/moment/moment.min.js"></script>
     {{-- <script src="{{ asset('backend') }}/plugins/daterangepicker/daterangepicker.js"></script> --}}
     <!-- Tempusdominus Bootstrap 4 -->
-    {{-- <script src="{{ asset('backend') }}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
-    </script> --}}
+    <script src="{{ asset('backend') }}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- bs-custom-file-input -->
     <script src="{{ asset('backend') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- Summernote -->
