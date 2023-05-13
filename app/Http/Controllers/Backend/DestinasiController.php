@@ -45,6 +45,8 @@ class DestinasiController extends Controller
                 'lokasi'        => 'required',
                 'deskripsi'     => 'required',
                 'image'         => 'required',
+                'image2'         => 'required',
+                'image3'         => 'required',
             ],
             [
                 'nama.required'         => 'Nama tidak boleh kosong..!!',
@@ -54,20 +56,34 @@ class DestinasiController extends Controller
                 'alamat.required'       => 'Alamat tidak boleh kosong..!!',
                 'lokasi.required'       => 'Lokasi tidak boleh kosong..!!',
                 'deskripsi.required'    => 'Deskripsi tidak boleh kosong..!!',
-                'image.required'        => 'Gambar tidak boleh kosong..!!',
+                'image.required'        => 'Gambar 1 tidak boleh kosong..!!',
+                'image2.required'       => 'Gambar 2 tidak boleh kosong..!!',
+                'image3.required'       => 'Gambar 3 tidak boleh kosong..!!',
             ]
         );
 
 
-
+        // gambar 1
         $image      = $request->file('image');
         $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
         Image::make($image)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen);
-        $save_url   = 'backend/upload/destinasi/' . $name_gen;
+        $gambar1    = 'backend/upload/destinasi/' . $name_gen;
+
+        // gambar 2
+        $image2      = $request->file('image2');
+        $name_gen2   = hexdec(uniqid()) . '.' . $image2->getClientOriginalExtension();
+        Image::make($image2)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen2);
+        $gambar2    = 'backend/upload/destinasi/' . $name_gen2;
+
+        // gambar 3
+        $image3      = $request->file('image3');
+        $name_gen3   = hexdec(uniqid()) . '.' . $image3->getClientOriginalExtension();
+        Image::make($image3)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen3);
+        $gambar3    = 'backend/upload/destinasi/' . $name_gen3;
 
         if ($request->harga_tiket == null) {
             $tkt        = 0;
-            $hrg_tkt    = 0;
+            $hrg_tkt    = '';
         } else {
             $tkt        = 1;
             $hrg_tkt    = $request->harga_tiket;
@@ -84,7 +100,9 @@ class DestinasiController extends Controller
             'lokasi'            => $request->lokasi,
             'deskripsi'         => $request->deskripsi,
             'deskripsi_singkat' => Str::of($request->deskripsi)->limit(100, '...'),
-            'gambar'            => $save_url,
+            'gambar'            => $gambar1,
+            'gambar2'           => $gambar2,
+            'gambar3'           => $gambar3,
             'created_at'        => Carbon::now(),
         ]);
 
@@ -147,22 +165,138 @@ class DestinasiController extends Controller
 
         if ($request->harga_tiket == null) {
             $tkt        = 0;
-            $hrg_tkt    = 0;
+            $hrg_tkt    = '';
         } else {
             $tkt        = 1;
             $hrg_tkt    = $request->harga_tiket;
         }
 
-
-        if ($request->file('image')) {
-            $img   = $destinasi->gambar;
+        if ($request->file('image') && $request->file('image2') && $request->file('image3')) {
+            $img    = $destinasi->gambar;
+            $img2   = $destinasi->gambar2;
+            $img3   = $destinasi->gambar3;
             unlink($img);
+            unlink($img2);
+            unlink($img3);
 
+            // gambar 1
             $image      = $request->file('image');
             $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             Image::make($image)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen);
-            $save_url   = 'backend/upload/destinasi/' . $name_gen;
+            $gambar1   = 'backend/upload/destinasi/' . $name_gen;
 
+            // gambar 2
+            $image2      = $request->file('image2');
+            $name_gen2   = hexdec(uniqid()) . '.' . $image2->getClientOriginalExtension();
+            Image::make($image2)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen2);
+            $gambar2    = 'backend/upload/destinasi/' . $name_gen2;
+
+            // gambar 3
+            $image3      = $request->file('image3');
+            $name_gen3   = hexdec(uniqid()) . '.' . $image3->getClientOriginalExtension();
+            Image::make($image3)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen3);
+            $gambar3    = 'backend/upload/destinasi/' . $name_gen3;
+        } else if ($request->file('image') && $request->file('image2')) {
+            $img    = $destinasi->gambar;
+            $img2   = $destinasi->gambar2;
+            unlink($img);
+            unlink($img2);
+
+
+            // gambar 1
+            $image      = $request->file('image');
+            $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen);
+            $gambar1   = 'backend/upload/destinasi/' . $name_gen;
+
+            // gambar 2
+            $image2      = $request->file('image2');
+            $name_gen2   = hexdec(uniqid()) . '.' . $image2->getClientOriginalExtension();
+            Image::make($image2)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen2);
+            $gambar2    = 'backend/upload/destinasi/' . $name_gen2;
+            $gambar3   = $destinasi->gambar3;
+        } else if ($request->file('image') && $request->file('image3')) {
+            $img    = $destinasi->gambar;
+            $img3   = $destinasi->gambar3;
+            unlink($img);
+            unlink($img3);
+
+            // gambar 1
+            $image      = $request->file('image');
+            $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen);
+            $gambar1   = 'backend/upload/destinasi/' . $name_gen;
+
+            // gambar 3
+            $image3      = $request->file('image3');
+            $name_gen3   = hexdec(uniqid()) . '.' . $image3->getClientOriginalExtension();
+            Image::make($image3)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen3);
+            $gambar3    = 'backend/upload/destinasi/' . $name_gen3;
+            $gambar2   = $destinasi->gambar2;
+        } else if ($request->file('image2') && $request->file('image3')) {
+            $img2    = $destinasi->gambar2;
+            $img3    = $destinasi->gambar3;
+            unlink($img2);
+            unlink($img3);
+
+            // gambar 2
+            $image2      = $request->file('image2');
+            $name_gen2   = hexdec(uniqid()) . '.' . $image2->getClientOriginalExtension();
+            Image::make($image2)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen2);
+            $gambar2    = 'backend/upload/destinasi/' . $name_gen2;
+
+            // gambar 3
+            $image3      = $request->file('image3');
+            $name_gen3   = hexdec(uniqid()) . '.' . $image3->getClientOriginalExtension();
+            Image::make($image3)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen3);
+            $gambar3    = 'backend/upload/destinasi/' . $name_gen3;
+            $gambar1   = $destinasi->gambar;
+        } else {
+            if ($request->file('image')) {
+                $img    = $destinasi->gambar;
+                unlink($img);
+
+                // gambar 1
+                $image      = $request->file('image');
+                $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+                Image::make($image)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen);
+                $gambar1   = 'backend/upload/destinasi/' . $name_gen;
+
+                $gambar2   = $destinasi->gambar2;
+                $gambar3   = $destinasi->gambar3;
+            } else if ($request->file('image2')) {
+                $img2   = $destinasi->gambar2;
+                unlink($img2);
+
+                // gambar 2
+                $image2      = $request->file('image2');
+                $name_gen2   = hexdec(uniqid()) . '.' . $image2->getClientOriginalExtension();
+                Image::make($image2)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen2);
+                $gambar2    = 'backend/upload/destinasi/' . $name_gen2;
+
+                $gambar1   = $destinasi->gambar;
+                $gambar3   = $destinasi->gambar3;
+            } else if ($request->file('image3')) {
+                $img3   = $destinasi->gambar3;
+                unlink($img3);
+
+                // gambar 3
+                $image3      = $request->file('image3');
+                $name_gen3   = hexdec(uniqid()) . '.' . $image3->getClientOriginalExtension();
+                Image::make($image3)->resize(800, 500)->save('backend/upload/destinasi/' . $name_gen3);
+                $gambar3    = 'backend/upload/destinasi/' . $name_gen3;
+
+                $gambar1   = $destinasi->gambar;
+                $gambar2   = $destinasi->gambar2;
+            }
+        }
+
+
+
+
+
+
+        if ($request->file('image') || $request->file('image2') || $request->file('image3')) {
 
 
             Destinasi::findOrFail($destinasi->id)->update([
@@ -176,7 +310,9 @@ class DestinasiController extends Controller
                 'lokasi'            => $request->lokasi,
                 'deskripsi'         => $request->deskripsi,
                 'deskripsi_singkat' => Str::of($request->deskripsi)->limit(100, '...'),
-                'gambar'            => $save_url,
+                'gambar'            => $gambar1,
+                'gambar2'           => $gambar2,
+                'gambar3'           => $gambar3,
                 'updated_at'        => Carbon::now(),
             ]);
         } else {
@@ -203,6 +339,16 @@ class DestinasiController extends Controller
         return redirect()->route('destinasi')->with($notification);
     }
 
+    public function detailDestinasi($slug)
+    {
+        $destinasi  = Destinasi::where('slug', $slug)->first();
+        $title      = "Detail Wisata";
+        $menu       = "destinasi";
+        $submenu    = "sub_destinasi";
+
+        return view('destinasi.detail_destinasi', compact('submenu', 'menu', 'title', 'destinasi'));
+    }
+
     public function hapusDestinasi($slug)
     {
         $destinasi = Destinasi::where('slug', $slug)->first();
@@ -210,7 +356,11 @@ class DestinasiController extends Controller
         // return $destinasi->gambar;
 
         $img            = $destinasi->gambar;
+        $img2           = $destinasi->gambar2;
+        $img3           = $destinasi->gambar3;
         unlink($img);
+        unlink($img2);
+        unlink($img3);
 
         Destinasi::findOrFail($destinasi->id)->delete();
 

@@ -19,8 +19,10 @@ class Destinasi extends Model
         'buka',
         'alamat',
         'lokasi',
-        'descripsi',
+        'deskripsi',
         'gambar',
+        'gambar2',
+        'gambar3',
     ];
 
     public function kategori()
@@ -32,7 +34,7 @@ class Destinasi extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'nama'
             ]
         ];
     }

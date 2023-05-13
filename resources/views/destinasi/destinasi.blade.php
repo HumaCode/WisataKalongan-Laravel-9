@@ -44,8 +44,9 @@
                 <h3 class="card-title">Daftar Destinasi Wisata</h3>
 
                 <div class="card-tools">
-                    <a href="{{ route('tambah.destinasi') }}" class="btn bg-cyan btn-flat btn-sm">
-                        <i class="fas fa-plus"></i> &nbsp; Tambah
+                    <a href="{{ route('tambah.destinasi') }}" class="btn bg-cyan btn-flat btn-sm" data-toggle="tooltip"
+                        data-placement="bottom" title="Tambah Destinasi">
+                        <i class="fas fa-plus"></i>
                     </a>
                 </div>
             </div>
@@ -59,7 +60,8 @@
                             <th>Gambar</th>
                             <th>Kategori</th>
                             <th>Lokasi</th>
-                            <th width="30%"><i class="fa fa-certificate"></i></th>
+                            <th>Tiket</th>
+                            <th width="15%"><i class="fa fa-certificate"></i></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,23 +85,34 @@
 
                             </td>
                             <td>{{ $item->kategori->nama }}</td>
-                            <td>{{ $item->lokasi }}</td>
-
+                            <td class="text-center">
+                                <a href="{{ $item->lokasi }}" target="_blank" class="badge badge-warning"
+                                    style="decoration: none;">lihat lokasi</a>
+                            </td>
+                            <td>
+                                @if ($item->tiket == 0)
+                                <span class="badge badge-success">tanpa tiket</span>
+                                @else
+                                <span class="badge badge-secondary">dengan tiket</span>
+                                <br>
+                                <small>Harga Rp. {{ $item->harga_tiket }}</small>
+                                @endif
+                            </td>
 
                             <td class=" text-center">
-                                <a href="" data-toggle="modal" class="btn bg-cyan btn-sm btn-flat"><i
-                                        class="fa fa-eye"></i>&nbsp;
-                                    Detail</a>
+                                <a href="{{ route('detail.destinasi', $item->slug) }}"
+                                    class="btn bg-cyan btn-sm btn-flat" data-toggle="tooltip" data-placement="bottom"
+                                    title="Detail Destinasi"><i class="fa fa-eye"></i>
+                                </a>
                                 &nbsp;
 
                                 <a href="{{ route('ubah.destinasi', $item->slug) }}"
-                                    class="btn btn-success btn-sm btn-flat"><i class=" fa fa-edit"></i>&nbsp;
-                                    Ubah</a>
+                                    class="btn btn-success btn-sm btn-flat" data-toggle="tooltip"
+                                    data-placement="bottom" title="Ubah Destinasi"><i class="fa fa-edit"></i></a>
                                 &nbsp;
                                 <a href="{{ route('hapus.destinasi', $item->slug) }}"
-                                    class="btn btn-danger btn-sm btn-flat" id="delete"><i
-                                        class=" fa fa-trash"></i>&nbsp;
-                                    Hapus</a>
+                                    class="btn btn-danger btn-sm btn-flat" id="delete" data-toggle="tooltip"
+                                    data-placement="bottom" title="Hapus Destinasi"><i class=" fa fa-trash"></i></a>
                             </td>
                         </tr>
 
@@ -114,7 +127,6 @@
 
     </div><!-- /.container-fluid -->
 </section>
-
 
 
 @endsection
@@ -166,6 +178,12 @@
             $('.btn[data-filter]').removeClass('active');
             $(this).addClass('active');
         });
+    })
+
+
+    // tooltips
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
     })
 
 </script>

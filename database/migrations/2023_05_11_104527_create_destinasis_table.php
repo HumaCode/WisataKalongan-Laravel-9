@@ -20,6 +20,9 @@ return new class extends Migration
             $table->integer('kategori_id');
             $table->string('alamat');
             $table->string('lokasi');
+            $table->string('gambar');
+            $table->string('gambar1');
+            $table->string('gambar2');
             $table->int('dilihat');
             $table->int('tiket');
             $table->int('harga_tiket');

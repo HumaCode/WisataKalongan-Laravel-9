@@ -62,6 +62,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/tambah/destinasi', 'tambahDestinasi')->name('tambah.destinasi');
         Route::post('/store/destinasi', 'storeDestinasi')->name('store.destinasi');
         Route::get('/ubah/destinasi/{slug}', 'ubahDestinasi')->name('ubah.destinasi');
+        Route::get('/detail/destinasi/{slug}', 'detailDestinasi')->name('detail.destinasi');
         Route::post('/update/destinasi', 'updateDestinasi')->name('update.destinasi');
         Route::get('/hapus/destinasi/{slug}', 'hapusDestinasi')->name('hapus.destinasi');
     });

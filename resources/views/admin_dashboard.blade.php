@@ -9,7 +9,9 @@ $adminData = App\Models\User::find($id);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Panel Admin | {{ $title }}</title>
+    <title>{{ config('app.name') }} | {{ $title }}</title>
+
+    <link rel="icon" href="{{ asset('backend') }}/img/4.png" type="image*">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

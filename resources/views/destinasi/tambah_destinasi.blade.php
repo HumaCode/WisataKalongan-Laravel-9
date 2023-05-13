@@ -110,7 +110,7 @@
 
                             <div id="g" style="display: none;" class="mt-1">
                                 <div class="form-group">
-                                    <input type="number" min="0" name="harga_tiket" class="form-control form-control-sm"
+                                    <input type="text" name="harga_tiket" class="form-control form-control-sm"
                                         style="border-radius: 0px;" id="harga_tiket" placeholder="Masukan Harga Tiket"
                                         style="display: none;">
                                 </div>
@@ -147,6 +147,7 @@
                                 <input type="text" name="lokasi"
                                     class="form-control form-control-sm @error('lokasi') is-invalid @enderror"
                                     style="border-radius: 0px;" id="lokasi" value="{{ old('lokasi') }}">
+                                <small>* masukan link lokasi dari google map</small><br>
                                 @error('lokasi')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -171,7 +172,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="image">Gambar</label>
+                                <label for="image">Gambar 1</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" name="image" id="image"
@@ -179,7 +180,8 @@
                                             id="image" style="border-radius: 0px;" accept=".png,.jpg">
                                         <label class="custom-file-label" for="image">Pilih Foto</label>
                                     </div>
-                                </div>
+                                </div><br>
+                                <small>* ukuran gambar 800x500 pixel</small>
                                 @error('image')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -190,6 +192,72 @@
                             <label for="photo" class="form-label">Proview Gambar</label>
                             <div class="input-group">
                                 <img class="img-fluid pad" id="showImage" src="{{ url('backend/img/noimg.png') }}"
+                                    alt="Photo">
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="image2">Gambar 2</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="image2" id="image2"
+                                            class="custom-file-input gambar2 form-control-sm @error('image') is-invalid @enderror"
+                                            style="border-radius: 0px;" accept=".png,.jpg">
+                                        <label class="custom-file-label" for="image2">Pilih Foto</label>
+                                    </div>
+                                </div><br>
+                                <small>* ukuran gambar 800x500 pixel</small>
+
+                                @error('image2')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="photo" class="form-label">Proview Gambar</label>
+                            <div class="input-group">
+                                <img class="img-fluid pad" id="showImage2" src="{{ url('backend/img/noimg.png') }}"
+                                    alt="Photo">
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="image3">Gambar 3</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="image3" id="image3"
+                                            class="custom-file-input gambar3 form-control-sm @error('image3') is-invalid @enderror"
+                                            style="border-radius: 0px;" accept=".png,.jpg">
+                                        <label class="custom-file-label" for="image3">Pilih Foto</label>
+                                    </div>
+                                </div><br>
+                                <small>* ukuran gambar 800x500 pixel</small>
+
+                                @error('image3')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="photo" class="form-label">Proview Gambar</label>
+                            <div class="input-group">
+                                <img class="img-fluid pad" id="showImage3" src="{{ url('backend/img/noimg.png') }}"
                                     alt="Photo">
 
 
@@ -223,7 +291,7 @@
     $(function () {
       bsCustomFileInput.init();
     });
-
+    
 
     $(document).ready(function() {
         $('#image').change(function(e) {
@@ -234,15 +302,24 @@
             reader.readAsDataURL(e.target.files['0']);
         })
     })
-
-
+   
     $(document).ready(function() {
-        $('#image').change(function(e) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('#showImage').attr('src', e.target.result);
+        $('#image2').change(function(e) {
+            var reader2 = new FileReader();
+            reader2.onload = function(e) {
+                $('#showImage2').attr('src', e.target.result);
             }
-            reader.readAsDataURL(e.target.files['0']);
+            reader2.readAsDataURL(e.target.files['0']);
+        })
+    })
+    
+    $(document).ready(function() {
+        $('#image3').change(function(e) {
+            var reader3 = new FileReader();
+            reader3.onload = function(e) {
+                $('#showImage3').attr('src', e.target.result);
+            }
+            reader3.readAsDataURL(e.target.files['0']);
         })
     })
 
