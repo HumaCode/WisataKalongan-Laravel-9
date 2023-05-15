@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Budaya extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
     protected $fillable = [
         'nama',
@@ -18,4 +19,13 @@ class Budaya extends Model
         'gambar',
         'deskripsi',
     ];
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'nama'
+            ]
+        ];
+    }
 }

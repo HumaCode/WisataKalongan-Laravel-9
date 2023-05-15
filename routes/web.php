@@ -83,6 +83,13 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(BudayaController::class)->group(function () {
         Route::get('/budaya', 'index')->name('budaya');
+        Route::get('/budaya/checkSlug', 'checkSlug');
+        Route::get('/tambah/budaya', 'tambahBudaya')->name('tambah.cagarbudaya');
+        Route::post('/store/budaya', 'storeBudaya')->name('store.cagarbudaya');
+        Route::get('/ubah/budaya/{slug}', 'ubahBudaya')->name('ubah.cagarbudaya');
+        Route::post('/update/budaya', 'updateBudaya')->name('update.cagarbudaya');
+        Route::get('/detail/budaya/{slug}', 'detailBudaya')->name('detail.cagarbudaya');
+        Route::get('/hapus/budaya/{slug}', 'hapusBudaya')->name('hapus.cagarbudaya');
     });
 });
 

@@ -41,8 +41,8 @@
                 <h3 class="card-title">Daftar Cagar Budaya</h3>
 
                 <div class="card-tools">
-                    <a href="{{ route('tambah.event') }}" class="btn bg-cyan btn-flat btn-sm" data-toggle="tooltip"
-                        data-placement="bottom" title="Tambah Event">
+                    <a href="{{ route('tambah.cagarbudaya') }}" class="btn bg-cyan btn-flat btn-sm"
+                        data-toggle="tooltip" data-placement="bottom" title="Tambah Cagar Budaya">
                         <i class="fas fa-plus"></i>
                     </a>
                 </div>
@@ -88,19 +88,19 @@
                             </td>
 
                             <td class=" text-center">
-                                <a href="{{ route('detail.destinasi', $item->slug) }}"
+                                <a href="{{ route('detail.cagarbudaya', $item->slug) }}"
                                     class="btn bg-cyan btn-sm btn-flat" data-toggle="tooltip" data-placement="bottom"
-                                    title="Detail Event"><i class="fa fa-eye"></i>
+                                    title="Detail Cagar Budaya"><i class="fa fa-eye"></i>
                                 </a>
                                 &nbsp;
 
-                                <a href="{{ route('ubah.event', $item->slug) }}" class="btn btn-success btn-sm btn-flat"
-                                    data-toggle="tooltip" data-placement="bottom" title="Ubah Event"><i
-                                        class="fa fa-edit"></i></a>
+                                <a href="{{ route('ubah.cagarbudaya', $item->slug) }}"
+                                    class="btn btn-success btn-sm btn-flat" data-toggle="tooltip"
+                                    data-placement="bottom" title="Ubah Cagar Budaya"><i class="fa fa-edit"></i></a>
                                 &nbsp;
-                                <a href="{{ route('hapus.event', $item->slug) }}" class="btn btn-danger btn-sm btn-flat"
-                                    id="delete" data-toggle="tooltip" data-placement="bottom" title="Hapus Event"><i
-                                        class=" fa fa-trash"></i></a>
+                                <a href="{{ route('hapus.cagarbudaya', $item->slug) }}"
+                                    class="btn btn-danger btn-sm btn-flat" id="delete" data-toggle="tooltip"
+                                    data-placement="bottom" title="Hapus Cagar Budaya"><i class=" fa fa-trash"></i></a>
                             </td>
                         </tr>
 

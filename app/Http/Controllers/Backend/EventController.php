@@ -98,7 +98,7 @@ class EventController extends Controller
         return redirect()->route('event')->with($notification);
     }
 
-    public function ubahEvent(Request $request, $slug)
+    public function ubahEvent($slug)
     {
         $event      = Event::where('slug', $slug)->first();
 
