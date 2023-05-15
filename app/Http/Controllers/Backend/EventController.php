@@ -194,6 +194,16 @@ class EventController extends Controller
         return redirect()->route('event')->with($notification);
     }
 
+    public function detailEvent($slug)
+    {
+        $event      = Event::where('slug', $slug)->first();
+        $title      = "Detail Event";
+        $menu       = "destinasi";
+        $submenu    = "sub_event";
+
+        return view('event.detail_event', compact('submenu', 'menu', 'title', 'event'));
+    }
+
     public function hapusEvent($slug)
     {
         $event = Event::where('slug', $slug)->first();

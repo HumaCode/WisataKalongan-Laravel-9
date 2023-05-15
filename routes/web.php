@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\BudayaController;
 use App\Http\Controllers\Backend\DestinasiController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KategoriController;
@@ -73,9 +74,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/event/checkSlug', 'checkSlug');
         Route::get('/tambah/event', 'tambahEvent')->name('tambah.event');
         Route::post('/store/event', 'storeEvent')->name('store.event');
+        Route::get('/detail/event/{slug}', 'detailEvent')->name('detail.event');
         Route::get('/ubah/event/{slug}', 'ubahEvent')->name('ubah.event');
         Route::post('/update/event', 'updateEvent')->name('update.event');
         Route::get('/hapus/event/{slug}', 'hapusEvent')->name('hapus.event');
+    });
+
+
+    Route::controller(BudayaController::class)->group(function () {
+        Route::get('/budaya', 'index')->name('budaya');
     });
 });
 

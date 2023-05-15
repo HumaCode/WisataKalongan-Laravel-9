@@ -63,6 +63,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('budaya') }}"
+                                class="nav-link {{ ($submenu == 'sub_budaya') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cagar Budaya</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('event') }}"
                                 class="nav-link {{ ($submenu == 'sub_event') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
