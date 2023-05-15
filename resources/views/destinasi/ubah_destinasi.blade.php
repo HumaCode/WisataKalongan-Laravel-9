@@ -288,7 +288,7 @@
 
                     <button type="submit" class="btn bg-cyan btn-sm btn-flat"><i class="fas fa-edit"></i>
                         &nbsp;
-                        Ubah</button>
+                        Ubah Data</button>
 
 
                 </form>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\DestinasiController;
+use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KategoriController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -65,6 +66,16 @@ Route::middleware('auth')->group(function () {
         Route::get('/detail/destinasi/{slug}', 'detailDestinasi')->name('detail.destinasi');
         Route::post('/update/destinasi', 'updateDestinasi')->name('update.destinasi');
         Route::get('/hapus/destinasi/{slug}', 'hapusDestinasi')->name('hapus.destinasi');
+    });
+
+    Route::controller(EventController::class)->group(function () {
+        Route::get('/event', 'index')->name('event');
+        Route::get('/event/checkSlug', 'checkSlug');
+        Route::get('/tambah/event', 'tambahEvent')->name('tambah.event');
+        Route::post('/store/event', 'storeEvent')->name('store.event');
+        Route::get('/ubah/event/{slug}', 'ubahEvent')->name('ubah.event');
+        Route::post('/update/event', 'updateEvent')->name('update.event');
+        Route::get('/hapus/event/{slug}', 'hapusEvent')->name('hapus.event');
     });
 });
 

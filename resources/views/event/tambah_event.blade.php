@@ -52,13 +52,13 @@
             <!-- /.card-header -->
             <div class="card-body">
 
-                <form id="myForm" method="post" action="{{ route('store.destinasi') }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('store.event') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label for="nama">Nama Destinasi</label>
+                                <label for="nama">Nama Event</label>
                                 <input type="text" name="nama"
                                     class="form-control form-control-sm  @error('nama') is-invalid @enderror"
                                     style="border-radius: 0px;" id="nama" value="{{ old('nama') }}">
@@ -67,62 +67,47 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="slug">Slug</label>
                                 <input type="text" name="slug"
                                     class="form-control form-control-sm @error('slug') is-invalid @enderror"
-                                    style="border-radius: 0px;" id="slug" readonly>
+                                    style="border-radius: 0px;" id="slug" readonly value="{{ old('slug') }}">
                                 @error('slug')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
+                    </div>
+
+                    <div class="row">
+
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="kategori_id">Kategori</label>
-
-                                <select name="kategori_id" id="kategori_id"
-                                    class="form-control form-control-sm @error('kategori_id') is-invalid @enderror"
-                                    style="border-radius: 0px;">
-
-                                    <option selected disabled>-- Pilih --</option>
-
-                                    @foreach ($kategori as $item)
-                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                                    @endforeach
-
-                                </select>
-                                @error('kategori_id')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-
+                                <label for="tgl_mulai">Tangal Mulai</label>
+                                <input type="date" name="tgl_mulai"
+                                    class=" form-control form-control-sm @error('tgl_mulai') is-invalid @enderror"
+                                    style="border-radius: 0px;" id="tgl_mulai" value="{{ old('tgl_mulai') }}">
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <button type="button" class="btn btn-xs btn-flat btn-success" id="b">Dengan Tiket</button>
-                            <button type="button" class="btn btn-xs btn-flat btn-danger" id="bt">Batal</button>
-
-
-                            <div id="g" style="display: none;" class="mt-1">
-                                <div class="form-group">
-                                    <input type="text" name="harga_tiket" class="form-control form-control-sm"
-                                        style="border-radius: 0px;" id="harga_tiket" placeholder="Masukan Harga Tiket"
-                                        style="display: none;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label for="buka">Jam Buka</label>
-                                <input type="text" name="buka"
-                                    class=" form-control form-control-sm @error('buka') is-invalid @enderror"
-                                    style="border-radius: 0px;" id="buka" value="{{ old('buka') }}">
-                                @error('buka')
+                                <label for="tgl_selesai">Tangal Selesai</label>
+                                <input type="date" name="tgl_selesai"
+                                    class=" form-control form-control-sm @error('tgl_selesai') is-invalid @enderror"
+                                    style="border-radius: 0px;" id="tgl_selesai" value="{{ old('tgl_selesai') }}">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="waktu">Waktu</label>
+                                <input type="text" name="waktu"
+                                    class=" form-control form-control-sm @error('waktu') is-invalid @enderror"
+                                    style="border-radius: 0px;" id="waktu" value="{{ old('waktu') }}">
+                                @error('waktu')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -130,7 +115,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
                                 <input type="text" name="alamat"
@@ -141,7 +126,18 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="penyelenggara">Penyelenggara</label>
+                                <input type="text" name="penyelenggara"
+                                    class="form-control form-control-sm @error('penyelenggara') is-invalid @enderror"
+                                    style="border-radius: 0px;" id="penyelenggara" value="{{ old('penyelenggara') }}">
+                                @error('penyelenggara')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="lokasi">Lokasi</label>
                                 <input type="text" name="lokasi"
@@ -157,7 +153,7 @@
 
                     <div class="form-group">
                         <label for="editor">Deskripsi</label>
-                        <input id="deskripsi" type="hidden" name="deskripsi">
+                        <input id="deskripsi" type="hidden" name="deskripsi" value="{{ old('deskripsi') }}">
                         <trix-editor input="deskripsi"></trix-editor>
                         @error('deskripsi')
                         <p class="text-danger">{{ $message }}</p>
@@ -172,7 +168,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="image">Gambar 1</label>
+                                <label for="image">Gambar</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" name="image" id="image"
@@ -180,8 +176,7 @@
                                             id="image" style="border-radius: 0px;" accept=".png,.jpg">
                                         <label class="custom-file-label" for="image">Pilih Foto</label>
                                     </div>
-                                </div><br>
-                                <small>* ukuran gambar 800x500 pixel</small>
+                                </div>
                                 @error('image')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -199,71 +194,6 @@
                         </div>
                     </div>
 
-                    <hr>
-
-                    <div class="row ">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="image2">Gambar 2</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" name="image2" id="image2"
-                                            class="custom-file-input gambar2 form-control-sm @error('image') is-invalid @enderror"
-                                            style="border-radius: 0px;" accept=".png,.jpg">
-                                        <label class="custom-file-label" for="image2">Pilih Foto</label>
-                                    </div>
-                                </div><br>
-                                <small>* ukuran gambar 800x500 pixel</small>
-
-                                @error('image2')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                        </div>
-                        <div class="col-md-6">
-                            <label for="photo" class="form-label">Proview Gambar</label>
-                            <div class="input-group">
-                                <img class="img-fluid pad" id="showImage2" src="{{ url('backend/img/noimg.png') }}"
-                                    alt="Photo">
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    <div class="row ">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="image3">Gambar 3</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" name="image3" id="image3"
-                                            class="custom-file-input gambar3 form-control-sm @error('image3') is-invalid @enderror"
-                                            style="border-radius: 0px;" accept=".png,.jpg">
-                                        <label class="custom-file-label" for="image3">Pilih Foto</label>
-                                    </div>
-                                </div><br>
-                                <small>* ukuran gambar 800x500 pixel</small>
-
-                                @error('image3')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                        </div>
-                        <div class="col-md-6">
-                            <label for="photo" class="form-label">Proview Gambar</label>
-                            <div class="input-group">
-                                <img class="img-fluid pad" id="showImage3" src="{{ url('backend/img/noimg.png') }}"
-                                    alt="Photo">
-
-
-                            </div>
-                        </div>
-                    </div>
 
                     <button type="submit" class="btn bg-cyan btn-sm btn-flat"><i class="fas fa-save"></i>
                         &nbsp;
@@ -303,42 +233,13 @@
         })
     })
    
-    $(document).ready(function() {
-        $('#image2').change(function(e) {
-            var reader2 = new FileReader();
-            reader2.onload = function(e) {
-                $('#showImage2').attr('src', e.target.result);
-            }
-            reader2.readAsDataURL(e.target.files['0']);
-        })
-    })
-    
-    $(document).ready(function() {
-        $('#image3').change(function(e) {
-            var reader3 = new FileReader();
-            reader3.onload = function(e) {
-                $('#showImage3').attr('src', e.target.result);
-            }
-            reader3.readAsDataURL(e.target.files['0']);
-        })
-    })
-
-
-    $(document).ready(function() {
-        $('#b').click(function() {
-            document.getElementById("g").style.display = "revert";
-        })
-        $('#bt').click(function() {
-            document.getElementById("g").style.display = "none";
-        })
-    });
 
     // slug
     const nama = document.querySelector('#nama');
     const slug = document.querySelector('#slug');
 
     nama.addEventListener('change', function() {
-        fetch('/destinasi/checkSlug?nama=' + nama.value)
+        fetch('/event/checkSlug?nama=' + nama.value)
         .then(response => response.json())
         .then(data => slug.value = data.slug)
     })

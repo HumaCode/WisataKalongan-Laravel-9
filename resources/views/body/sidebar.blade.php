@@ -63,7 +63,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="{{ route('event') }}"
+                                class="nav-link {{ ($submenu == 'sub_event') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Even</p>
                             </a>

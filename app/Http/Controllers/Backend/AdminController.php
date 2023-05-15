@@ -71,6 +71,10 @@ class AdminController extends Controller
         $request->validate([
             'old_password' => 'required',
             'new_password' => 'required|confirmed',
+        ], [
+            'old_password.required'  => 'Password lama tidak boleh kosong..!!',
+            'new_password.required'  => 'Password baru tidak boleh kosong..!!',
+            'new_password.confirmed' => 'Password tidak cocok..!!',
         ]);
 
         if (!Hash::check($request->old_password, auth::user()->password)) {
