@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\BudayaController;
 use App\Http\Controllers\Backend\DestinasiController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KategoriController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -90,6 +91,11 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/budaya', 'updateBudaya')->name('update.cagarbudaya');
         Route::get('/detail/budaya/{slug}', 'detailBudaya')->name('detail.cagarbudaya');
         Route::get('/hapus/budaya/{slug}', 'hapusBudaya')->name('hapus.cagarbudaya');
+    });
+
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('/order', 'index')->name('order');
+        Route::get('/detail/order/{ud}', 'detailOrder')->name('detail.order');
     });
 });
 

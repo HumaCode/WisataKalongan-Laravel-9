@@ -79,6 +79,16 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ url('/order') }}" class="nav-link {{ ($submenu == 'sub_order') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-money-bill-alt"></i>
+                        <p>
+                            Pemesanan Tiket
+                        </p>
+                    </a>
+                </li>
+
+
                 <div class="user-panel  pb-3  d-flex">
 
                 </div>
