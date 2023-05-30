@@ -92,9 +92,9 @@
                             </td>
 
                             <td class=" text-center">
-                                <a href="{{ route('detail.destinasi', $item->slug) }}"
-                                    class="btn bg-cyan btn-sm btn-flat" data-toggle="tooltip" data-placement="bottom"
-                                    title="Detail Event"><i class="fa fa-eye"></i>
+                                <a href="{{ route('detail.event', $item->slug) }}" class="btn bg-cyan btn-sm btn-flat"
+                                    data-toggle="tooltip" data-placement="bottom" title="Detail Event"><i
+                                        class="fa fa-eye"></i>
                                 </a>
                                 &nbsp;
 

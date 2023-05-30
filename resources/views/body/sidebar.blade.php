@@ -63,6 +63,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('budaya') }}"
+                                class="nav-link {{ ($submenu == 'sub_budaya') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cagar Budaya</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('event') }}"
                                 class="nav-link {{ ($submenu == 'sub_event') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
@@ -71,6 +78,16 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ url('/order') }}" class="nav-link {{ ($submenu == 'sub_order') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-money-bill-alt"></i>
+                        <p>
+                            Pemesanan Tiket
+                        </p>
+                    </a>
+                </li>
+
 
                 <div class="user-panel  pb-3  d-flex">
 

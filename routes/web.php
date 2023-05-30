@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\BudayaController;
 use App\Http\Controllers\Backend\DestinasiController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KategoriController;
-use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,9 +74,27 @@ Route::middleware('auth')->group(function () {
         Route::get('/event/checkSlug', 'checkSlug');
         Route::get('/tambah/event', 'tambahEvent')->name('tambah.event');
         Route::post('/store/event', 'storeEvent')->name('store.event');
+        Route::get('/detail/event/{slug}', 'detailEvent')->name('detail.event');
         Route::get('/ubah/event/{slug}', 'ubahEvent')->name('ubah.event');
         Route::post('/update/event', 'updateEvent')->name('update.event');
         Route::get('/hapus/event/{slug}', 'hapusEvent')->name('hapus.event');
+    });
+
+
+    Route::controller(BudayaController::class)->group(function () {
+        Route::get('/budaya', 'index')->name('budaya');
+        Route::get('/budaya/checkSlug', 'checkSlug');
+        Route::get('/tambah/budaya', 'tambahBudaya')->name('tambah.cagarbudaya');
+        Route::post('/store/budaya', 'storeBudaya')->name('store.cagarbudaya');
+        Route::get('/ubah/budaya/{slug}', 'ubahBudaya')->name('ubah.cagarbudaya');
+        Route::post('/update/budaya', 'updateBudaya')->name('update.cagarbudaya');
+        Route::get('/detail/budaya/{slug}', 'detailBudaya')->name('detail.cagarbudaya');
+        Route::get('/hapus/budaya/{slug}', 'hapusBudaya')->name('hapus.cagarbudaya');
+    });
+
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('/order', 'index')->name('order');
+        Route::get('/detail/order/{ud}', 'detailOrder')->name('detail.order');
     });
 });
 

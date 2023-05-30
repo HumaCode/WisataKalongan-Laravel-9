@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('tlp');
             $table->string('email');
             $table->date('tgl_order');
-            $table->string('hrg_tiket');
             $table->string('bank');
             $table->integer('nominal');
             $table->string('gambar');
+            $table->text('ket_lain');
             $table->timestamps();
         });
     }
