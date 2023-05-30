@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\DestinasiController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KategoriController;
+use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-
-
-    return view('welcome');
+    return view('user/home');
+    Route::get('informasi', [InformasiController::class, 'index'])->name('informasi');
 });
 
 Route::get('/dashboard', function () {
