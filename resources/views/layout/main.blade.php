@@ -30,15 +30,15 @@ $setting = App\Models\Setting::find(1)->first();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -95,18 +95,18 @@ $setting = App\Models\Setting::find(1)->first();
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Kontak Kami</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Semarang, Pekalongan</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 858 2468 1110</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>wisatapkl@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{ $setting->alamat }}</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{ $setting->tlp }}</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{ $setting->email }}</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href="{{ $setting->ig }}"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href="{{ $setting->facebook }}"
+                            target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href="{{ $setting->youtube }}"
+                            target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href="{{ $setting->twitter }}"
+                            target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -146,11 +146,11 @@ $setting = App\Models\Setting::find(1)->first();
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Wisata Pekalongan</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">{{ $setting->title }}</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By Wisata Pekalongan</a>
+                    Designed By {{ $setting->title }}</a>
                 </div>
             </div>
         </div>
@@ -166,17 +166,17 @@ $setting = App\Models\Setting::find(1)->first();
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/lib/wow/wow.min.js"></script>
-    <script src="assets/lib/easing/easing.min.js"></script>
-    <script src="assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="assets/lib/counterup/counterup.min.js"></script>
-    <script src="assets/lib/parallax/parallax.min.js"></script>
-    <script src="assets/lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="assets/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="{{ asset('assets') }}/lib/wow/wow.min.js"></script>
+    <script src="{{ asset('assets') }}/lib/easing/easing.min.js"></script>
+    <script src="{{ asset('assets') }}/lib/waypoints/waypoints.min.js"></script>
+    <script src="{{ asset('assets') }}/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{ asset('assets') }}/lib/counterup/counterup.min.js"></script>
+    <script src="{{ asset('assets') }}/lib/parallax/parallax.min.js"></script>
+    <script src="{{ asset('assets') }}/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="{{ asset('assets') }}/lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets') }}/js/main.js"></script>
 </body>
 
 </html>

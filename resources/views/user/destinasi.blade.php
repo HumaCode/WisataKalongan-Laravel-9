@@ -17,8 +17,8 @@
 <!-- Page Header End -->
 
 
- <!-- Projects Start -->
- <div class="container-xxl py-5">
+<!-- Projects Start -->
+<div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <p class="fs-5 fw-bold text-primary">Obyek Wisata</p>
@@ -34,86 +34,31 @@
             </div>
         </div>
         <div class="row g-4 portfolio-container">
+
+            @foreach ($destinasi as $item)
+
+
             <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                 <div class="portfolio-inner rounded">
-                    <img class="img-fluid" src="assets/img/Pantai Wonokerto 2.jpg" alt="">
+                    <img class="img-fluid" src="{{ url($item->gambar) }}" alt="">
                     <div class="portfolio-text">
-                        <h4 class="text-white mb-4">Pantai Wonokerto</h4>
+                        <h4 class="text-white mb-4">{{ $item->nama }}</h4>
                         <div class="d-flex">
-                            <a class="btn btn-lg-square rounded-circle mx-2" href="assets/img/Pantai Wonokerto 2.jpg"
+                            <a class="btn btn-lg-square rounded-circle mx-2" href="{{ url($item->gambar) }}"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square rounded-circle mx-2" href="{{ url('detail') }}" class="nav-item nav-link 
+                            <a class="btn btn-lg-square rounded-circle mx-2"
+                                href="{{ route('detail.wisata', $item->slug) }}" class="nav-item nav-link 
                             {{ ($title == 'Destinasi Wisata') ? 'active' : '' }}"><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                <div class="portfolio-inner rounded">
-                    <img class="img-fluid" src="assets/img/Pantai Krematorium Pekalongan.jpg" alt="">
-                    <div class="portfolio-text">
-                        <h4 class="text-white mb-4">Pantai Krematorium</h4>
-                        <div class="d-flex">
-                            <a class="btn btn-lg-square rounded-circle mx-2"
-                                href="assets/img/Pantai Krematorium Pekalongan.jpg" data-lightbox="portfolio"><i
-                                    class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                <div class="portfolio-inner rounded">
-                    <img class="img-fluid" src="assets/img/Pantai pasir kencana.jpg" alt="">
-                    <div class="portfolio-text">
-                        <h4 class="text-white mb-4">Pantai Pasir Kencana</h4>
-                        <div class="d-flex">
-                            <a class="btn btn-lg-square rounded-circle mx-2" href="assets/assets/img/Pantai pasir kencana.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                <div class="portfolio-inner rounded">
-                    <img class="img-fluid" src="assets/img/Black Canyon.jpg" alt="">
-                    <div class="portfolio-text">
-                        <h4 class="text-white mb-4">Black Canyon</h4>
-                        <div class="d-flex">
-                            <a class="btn btn-lg-square rounded-circle mx-2" href="assets/img/Black Canyon.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
-                <div class="portfolio-inner rounded">
-                    <img class="img-fluid" src="assets/img/Bukit Pawuluhan.jpg" alt="">
-                    <div class="portfolio-text">
-                        <h4 class="text-white mb-4">Bukit Pawuluhan</h4>
-                        <div class="d-flex">
-                            <a class="btn btn-lg-square rounded-circle mx-2" href="assets/img/Bukit Pawuluhan.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                <div class="portfolio-inner rounded">
-                    <img class="img-fluid" src="assets/img/Curug Madu.jpg" alt="">
-                    <div class="portfolio-text">
-                        <h4 class="text-white mb-4">Curug Madu</h4>
-                        <div class="d-flex">
-                            <a class="btn btn-lg-square rounded-circle mx-2" href="assets/img/Curug Madu.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            @endforeach
+
+
+
+
         </div>
     </div>
 </div>
@@ -121,5 +66,3 @@
 
 
 @endsection
-
-   
