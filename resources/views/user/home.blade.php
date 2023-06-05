@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @php
 $setting = App\Models\Setting::find(1)->first();
 @endphp
@@ -109,6 +110,12 @@ $setting = App\Models\Setting::find(1)->first();
 
 
     <!-- Carousel Start -->
+=======
+@extends('layout.main')
+@section('content')
+
+<!-- Carousel Start -->
+>>>>>>> 52cdc96e1f70b5e089bec33fe79843918ba575ce
     <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -640,7 +647,9 @@ $setting = App\Models\Setting::find(1)->first();
         </div>
     </div>
     <!-- Testimonial End -->
+@endsection
 
+<<<<<<< HEAD
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
@@ -733,3 +742,6 @@ $setting = App\Models\Setting::find(1)->first();
 </body>
 
 </html>
+=======
+   
+>>>>>>> 52cdc96e1f70b5e089bec33fe79843918ba575ce

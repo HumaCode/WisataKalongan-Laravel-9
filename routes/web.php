@@ -1,13 +1,22 @@
 <?php
 
+use App\Http\Controllers\AcaraController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BudayaController;
 use App\Http\Controllers\Backend\DestinasiController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KategoriController;
 use App\Http\Controllers\Backend\OrderController;
+<<<<<<< HEAD
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\InformasiController;
+=======
+use App\Http\Controllers\DestinasiwisataController;
+use App\Http\Controllers\DetailwisataController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\KontakController;
+>>>>>>> 52cdc96e1f70b5e089bec33fe79843918ba575ce
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -33,8 +42,17 @@ Route::get('/', function () {
     return view('user/home');
 });
 
+<<<<<<< HEAD
 Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi');
 
+=======
+Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('destinasiwisata', [DestinasiwisataController::class, 'index'])->name('destinasiwisata');
+Route::get('informasi', [InformasiController::class, 'index'])->name('informasi');
+Route::get('acara', [AcaraController::class, 'index'])->name('acara');
+Route::get('kontakkami', [KontakController::class, 'index'])->name('kontakkami');
+Route::get('detail', [DetailwisataController::class, 'index'])->name('detail');
+>>>>>>> 52cdc96e1f70b5e089bec33fe79843918ba575ce
 
 Route::get('/dashboard', function () {
 
