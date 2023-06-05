@@ -1,9 +1,9 @@
 <aside class="main-sidebar elevation-4 sidebar-light-info">
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link bg-cyan">
-        <img src="{{ asset('backend') }}/img/4.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="{{ url($setting->logo) }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">Wisata Kalongan</span>
+        <span class="brand-text font-weight-light">{{ $setting->title }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -118,6 +118,15 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ url('/setting') }}" class="nav-link {{ ($submenu == 'setting') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Setting Website
+                        </p>
+                    </a>
                 </li>
 
 

@@ -28,6 +28,7 @@ return new class extends Migration
             $table->int('harga_tiket');
             $table->text('deskripsi');
             $table->string('deskripsi_singkat');
+            $table->integer('hint_destinasi');
             $table->timestamps();
         });
     }

@@ -1,6 +1,7 @@
 @php
 $id = Auth::user()->id;
 $adminData = App\Models\User::find($id);
+$setting = App\Models\Setting::find(1);
 @endphp
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@ $adminData = App\Models\User::find($id);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name') }} | {{ $title }}</title>
 
-    <link rel="icon" href="{{ asset('backend') }}/img/4.png" type="image*">
+    <link rel="icon" href="{{ url($setting->logo) }}" type="image*">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

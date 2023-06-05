@@ -1,12 +1,17 @@
+@php
+$setting = App\Models\Setting::find(1)->first();
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Wisata Kalongan</title>
+    <title>{{ $setting->title }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="{{ $setting->meta_keyword }}" name="keywords">
+    <meta content="{{ $setting->meta_description }}" name="description">
+    <link rel="icon" href="{{ url($setting->logo) }}" type="image*">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -242,7 +247,8 @@
 
 
     <!-- Facts Start -->
-    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="assets/img/Telaga Mangunan 2.jpg">
+    <div class="container-fluid facts my-5 py-5" data-parallax="scroll"
+        data-image-src="assets/img/Telaga Mangunan 2.jpg">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
@@ -378,7 +384,8 @@
 
 
     <!-- Quote Start -->
-    <div class="container-fluid quote my-5 py-5" data-parallax="scroll" data-image-src="assets/img/Telaga Rawa Jaya.jpg">
+    <div class="container-fluid quote my-5 py-5" data-parallax="scroll"
+        data-image-src="assets/img/Telaga Rawa Jaya.jpg">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
@@ -455,8 +462,9 @@
                         <div class="portfolio-text">
                             <h4 class="text-white mb-4">Pantai Wonokerto</h4>
                             <div class="d-flex">
-                                <a class="btn btn-lg-square rounded-circle mx-2" href="assets/img/Pantai Wonokerto 2.jpg"
-                                    data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-lg-square rounded-circle mx-2"
+                                    href="assets/img/Pantai Wonokerto 2.jpg" data-lightbox="portfolio"><i
+                                        class="fa fa-eye"></i></a>
                                 <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
@@ -482,8 +490,9 @@
                         <div class="portfolio-text">
                             <h4 class="text-white mb-4">Pantai Pasir Kencana</h4>
                             <div class="d-flex">
-                                <a class="btn btn-lg-square rounded-circle mx-2" href="assets/assets/img/Pantai pasir kencana.jpg"
-                                    data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-lg-square rounded-circle mx-2"
+                                    href="assets/assets/img/Pantai pasir kencana.jpg" data-lightbox="portfolio"><i
+                                        class="fa fa-eye"></i></a>
                                 <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
@@ -639,18 +648,18 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Kontak Kami</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Semarang, Pekalongan</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 858 2468 1110</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>wisatapkl@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{ $setting->alamat }}</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{ $setting->tlp }}</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i> {{ $setting->email }} </p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=" {{ $setting->ig }} "
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" target="_blank"
+                            href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" target="_blank"
+                            href="{{ $setting->youtube }}"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" target="_blank"
+                            href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -690,11 +699,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Wisata Pekalongan</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">{{ $setting->title }}</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By Wisata Pekalongan</a>
+                    Designed By {{ $setting->title }}</a>
                 </div>
             </div>
         </div>

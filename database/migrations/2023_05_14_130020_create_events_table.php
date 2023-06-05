@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->string('alamat');
             $table->string('lokasi');
+            $table->integer('hint_event');
             $table->timestamps();
         });
     }

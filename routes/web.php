@@ -6,7 +6,10 @@ use App\Http\Controllers\Backend\DestinasiController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KategoriController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +25,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
+    // Setting::increment('hint_website');
+    DB::table('settings')->increment('hint_website');
+
+    // return $setting->hint_website;
+
     return view('user/home');
-    Route::get('informasi', [InformasiController::class, 'index'])->name('informasi');
 });
+
+Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi');
+
 
 Route::get('/dashboard', function () {
 
@@ -95,6 +105,11 @@ Route::middleware('auth')->group(function () {
     Route::controller(OrderController::class)->group(function () {
         Route::get('/order', 'index')->name('order');
         Route::get('/detail/order/{ud}', 'detailOrder')->name('detail.order');
+    });
+
+    Route::controller(SettingController::class)->group(function () {
+        Route::get('/setting', 'index')->name('setting');
+        Route::post('/setting/store', 'settingStore')->name('store.setting');
     });
 });
 
