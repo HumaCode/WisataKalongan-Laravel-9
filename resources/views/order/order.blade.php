@@ -82,8 +82,8 @@
                                 </a>
 
                                 &nbsp;
-                                <a href="{{ route('hapus.event', $item->id) }}" class="btn btn-danger btn-sm btn-flat"
-                                    id="delete" data-toggle="tooltip" data-placement="bottom" title="Hapus Event"><i
+                                <a href="{{ route('hapus.order', $item->id) }}" class="btn btn-danger btn-sm btn-flat"
+                                    id="delete" data-toggle="tooltip" data-placement="bottom" title="Hapus Orderan"><i
                                         class=" fa fa-trash"></i></a>
                             </td>
                         </tr>

@@ -48,6 +48,7 @@ Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('destinasiwisata', [DestinasiwisataController::class, 'index'])->name('destinasiwisata');
 Route::get('detail/{slug}', [DestinasiwisataController::class, 'detail'])->name('detail.wisata');
+Route::post('order', [DestinasiwisataController::class, 'order'])->name('order');
 Route::get('informasi', [InformasiController::class, 'index'])->name('informasi');
 Route::get('acara', [AcaraController::class, 'index'])->name('acara');
 Route::get('kontakkami', [KontakController::class, 'index'])->name('kontakkami');
@@ -122,7 +123,9 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(OrderController::class)->group(function () {
         Route::get('/order', 'index')->name('order');
-        Route::get('/detail/order/{ud}', 'detailOrder')->name('detail.order');
+        Route::get('/detail/order/{id}', 'detailOrder')->name('detail.order');
+        Route::get('/invoice/print/{id}', 'invoicePrint')->name('invoice.print');
+        Route::get('/hapus/order/{id}', 'hapusOrder')->name('hapus.order');
     });
 
     Route::controller(SettingController::class)->group(function () {

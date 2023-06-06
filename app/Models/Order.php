@@ -16,6 +16,7 @@ class Order extends Model
         'email',
         'tgl_order',
         'bank',
+        'jml_tiket',
         'nominal',
         'ket_lain',
     ];
