@@ -1,5 +1,5 @@
 @php
-$setting = App\Models\Setting::find(1)->first();
+$setting = App\Models\Setting::find(1);
 @endphp
 
 <!DOCTYPE html>

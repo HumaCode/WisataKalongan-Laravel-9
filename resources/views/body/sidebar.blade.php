@@ -88,6 +88,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ url('/pertanyaan') }}" class="nav-link {{ ($submenu == 'sub_tanya') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-question-circle"></i>
+                        <p>
+                            Daftar Pertanyaan
+                        </p>
+                    </a>
+                </li>
+
 
                 <div class="user-panel  pb-3  d-flex">
 

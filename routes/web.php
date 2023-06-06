@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\DestinasiController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KategoriController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\PertanyaanController;
 
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\InformasiController;
@@ -52,6 +53,7 @@ Route::post('order', [DestinasiwisataController::class, 'order'])->name('order')
 Route::get('informasi', [InformasiController::class, 'index'])->name('informasi');
 Route::get('acara', [AcaraController::class, 'index'])->name('acara');
 Route::get('kontakkami', [KontakController::class, 'index'])->name('kontakkami');
+Route::post('/pertanyaan', [KontakController::class, 'pertanyaan'])->name('kontak.tanya');
 Route::get('detail', [DetailwisataController::class, 'index'])->name('detail');
 
 
@@ -126,6 +128,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/detail/order/{id}', 'detailOrder')->name('detail.order');
         Route::get('/invoice/print/{id}', 'invoicePrint')->name('invoice.print');
         Route::get('/hapus/order/{id}', 'hapusOrder')->name('hapus.order');
+    });
+
+    Route::controller(PertanyaanController::class)->group(function () {
+        Route::get('/pertanyaan', 'index')->name('pertanyaan');
+        Route::get('/pertanyaan/hapus/{id}', 'hapusPertanyaan')->name('hapus.pertanyaan');
     });
 
     Route::controller(SettingController::class)->group(function () {
