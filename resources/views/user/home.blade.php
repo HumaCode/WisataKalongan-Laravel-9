@@ -434,62 +434,6 @@
 <!-- Projects End -->
 
 
-<!-- Team Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <p class="fs-5 fw-bold text-primary">Tim Kami</p>
-            <h1 class="display-5 mb-5">Anggota Tim yang Berpengalaman</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item rounded">
-                    <img class="img-fluid" src="assets/img/team-1.jpg" alt="">
-                    <div class="team-text">
-                        <h4 class="mb-0">Doris Jordan</h4>
-                        <p class="text-primary">Landscape Designer</p>
-                        <div class="team-social d-flex">
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item rounded">
-                    <img class="img-fluid" src="assets/img/team-2.jpg" alt="">
-                    <div class="team-text">
-                        <h4 class="mb-0">Johnny Ramirez</h4>
-                        <p class="text-primary">Garden Designer</p>
-                        <div class="team-social d-flex">
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item rounded">
-                    <img class="img-fluid" src="assets/img/team-3.jpg" alt="">
-                    <div class="team-text">
-                        <h4 class="mb-0">Diana Wagner</h4>
-                        <p class="text-primary">Senior Gardener</p>
-                        <div class="team-social d-flex">
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Team End -->
-
-
 <!-- Testimonial Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -497,27 +441,29 @@
             <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
                 <p class="fs-5 fw-bold text-primary">Testimonial</p>
                 <h1 class="display-5 mb-5">Testimonial Dari Klien Kami!</h1>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                    eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                <p class="mb-4">Testimonial ini dapat memberikan gambaran positif kepada calon pengunjung tentang 
+                    pengalaman orang lain yang telah mengunjungi tempat wisata tersebut.</p>
                 <a class="btn btn-primary py-3 px-4" href="">See More</a>
             </div>
             <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item">
-                        <img class="img-fluid rounded mb-3" src="assets/img/testimonial-1.jpg" alt="">
-                        <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                            lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                        <img class="img-fluid rounded mb-3" src="assets/img/fotoprofil1.jpg" alt="">
+                        <p class="fs-6">
+                            Saya telah mencoba berbagai kegiatan menantang seperti hiking, menyelam, 
+                            dan menyusuri sungai. Tim instruktur yang berpengalaman 
+                            dan fasilitas yang baik membuat pengalaman saya menjadi luar biasa. 
                         </p>
-                        <h4>Client Name</h4>
-                        <span>Profession</span>
+                        <h4>Sarah Aprilia</h4>
+                        <span>Selebgram</span>
                     </div>
                     <div class="testimonial-item">
-                        <img class="img-fluid rounded mb-3" src="assets/img/testimonial-2.jpg" alt="">
-                        <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                            lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                        <img class="img-fluid rounded mb-3" src="assets/img/fotoprofil2.jpg" alt="">
+                        <p class="fs-6">"Mereka sangat perhatian dan membantu dalam mengatur perjalanan saya. 
+                            Saya merasa aman dan nyaman selama perjalanan, dan mereka memberikan pengalaman yang tak terlupakan.
                         </p>
-                        <h4>Client Name</h4>
-                        <span>Profession</span>
+                        <h4>Anwar Ibrahim</h4>
+                        <span>Brand Ambasador</span>
                     </div>
                 </div>
             </div>

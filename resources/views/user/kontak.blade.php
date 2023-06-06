@@ -4,7 +4,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-5">
-            <h1 class="display-3 text-white mb-4 animated slideInDown">Kontak Kami</h1>
+            <h1 class="display-3 text-white mb-4 animated slideInDown">Tentang Kami</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -16,6 +16,47 @@
     </div>
     <!-- Page Header End -->
 
+
+    <div class="section section-2">
+		<div class="container">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
+					<div class="image-stack mb-5 mb-lg-0">
+						<div class="image-stack__item image-stack__item--bottom" data-aos="fade-up">
+							<img src="assets/img/img_v_1.jpg" alt="Image" class="img-fluid rellax ">
+						</div>
+						<div class="image-stack__item image-stack__item--top" data-aos="fade-up" data-aos-delay="100"
+							data-rellax-percentage="0.5">
+							<img src="assets/img/img_v_2.jpg" alt="Image" class="img-fluid">
+						</div>
+					</div>
+
+				</div>
+				<div class="col-lg-4 order-lg-1">
+
+					<div>
+						<h2 class="display-5 mb-5" data-aos="fade-up" data-aos-delay="100">Jelajahi Semua Sudut&nbsp;Pekalongan Bersama Kami</h2>
+
+						<p data-aos="fade-up" data-aos-delay="200">
+                            Kami berkomitmen untuk menyajikan informasi yang akurat, terkini, dan berguna bagi para pengunjung kami. 
+                            Tim kami bekerja keras untuk menghadirkan konten yang menarik, foto-foto menakjubkan, 
+                            dan saran-saran yang berguna untuk membantu Anda merencanakan perjalanan yang sempurna.
+                        </p>
+
+						<p data-aos="fade-up" data-aos-delay="300">
+                            Pekalongan adalah sebuah kota yang terletak di Provinsi Jawa Tengah, Indonesia. Kota ini memiliki potensi 
+                            wisata yang menarik dengan berbagai destinasi dan atraksi yang dapat dinikmati oleh para pengunjung.
+                        </p>
+{{-- 
+						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">Read
+								more</a></p> --}}
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
 
     <!-- Contact Start -->
     <div class="container-xxl py-5">

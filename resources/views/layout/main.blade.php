@@ -7,7 +7,7 @@ $setting = App\Models\Setting::find(1)->first();
 
 <head>
     <meta charset="utf-8">
-    <title>{{ $setting->title}}</title>
+    <title>{{ $setting->title}} | {{ $title }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="{{ url($setting->meta_keyword) }}" name="keywords">
     <meta content="{{ url($setting->meta_description) }}" name="description">
@@ -69,7 +69,7 @@ $setting = App\Models\Setting::find(1)->first();
                 {{ ($title == 'Layanan Informasi') ? 'active' : '' }}">Informasi</a>
                 <a href="{{ url('acara') }}" class="nav-item nav-link 
                 {{ ($title == 'Event Acara') ? 'active' : '' }}">Acara</a>
-                <div class="nav-item dropdown">
+                {{-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu bg-light m-0">
                         <a href="feature.html" class="dropdown-item">Features</a>
@@ -78,9 +78,11 @@ $setting = App\Models\Setting::find(1)->first();
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
-                </div>
+                </div> --}}
                 <a href="{{ url('kontakkami') }}" class="nav-item nav-link 
-                {{ ($title == 'Kontak Kami') ? 'active' : '' }}">Kontak Kami</a>
+                {{ ($title == 'Kontak Kami') ? 'active' : '' }}">Tentang Kami</a>
+                {{-- <a href="{{ url('kontakkami') }}" class="nav-item nav-link 
+                {{ ($title == 'Kontak Kami') ? 'active' : '' }}">Kontak Kami</a> --}}
             </div>
             <!-- <a href="" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote<i
                     class="fa fa-arrow-right ms-3"></i></a> -->
@@ -114,29 +116,29 @@ $setting = App\Models\Setting::find(1)->first();
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Layanan</h4>
-                    <a class="btn btn-link" href="">Landscaping</a>
-                    <a class="btn btn-link" href="">Pruning plants</a>
-                    <a class="btn btn-link" href="">Urban Gardening</a>
-                    <a class="btn btn-link" href="">Garden Maintenance</a>
-                    <a class="btn btn-link" href="">Green Technology</a>
+                    <a class="btn btn-link" href="">Destinasi Wisata</a>
+                    <a class="btn btn-link" href="">Panduan Wisata</a>
+                    <a class="btn btn-link" href="">Event Acara</a>
+                    <a class="btn btn-link" href="">Rencana Perjalanan</a>
+                    <a class="btn btn-link" href="">Informasi Terkini</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Menu</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="">Home</a>
+                    <a class="btn btn-link" href="">Destinasi</a>
+                    <a class="btn btn-link" href="">Informasi</a>
+                    <a class="btn btn-link" href="">Acara</a>
+                    <a class="btn btn-link" href="">Tentang Kami</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Terkini</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative w-100">
+                    <p>Jangan lewatkan untuk info menarik lainnya pada website kami</p>
+                    {{-- <div class="position-relative w-100">
                         <input class="form-control bg-light border-light w-100 py-3 ps-4 pe-5" type="text"
                             placeholder="Your email">
                         <button type="button"
                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
