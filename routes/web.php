@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PertanyaanController;
 
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\CagarbudayaController;
 use App\Http\Controllers\InformasiController;
 
 use App\Http\Controllers\DestinasiwisataController;
@@ -48,6 +49,7 @@ Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi
 
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('destinasiwisata', [DestinasiwisataController::class, 'index'])->name('destinasiwisata');
+Route::get('cagarbudaya', [CagarbudayaController::class, 'index'])->name('cagarbudaya');
 Route::get('detail/{slug}', [DestinasiwisataController::class, 'detail'])->name('detail.wisata');
 Route::post('order', [DestinasiwisataController::class, 'order'])->name('order');
 Route::get('informasi', [InformasiController::class, 'index'])->name('informasi');

@@ -65,6 +65,8 @@ $setting = App\Models\Setting::find(1);
                 {{ ($title == 'Home') ? 'active' : '' }}">Home</a>
                 <a href="{{ url('destinasiwisata') }}" class="nav-item nav-link 
                 {{ ($title == 'Destinasi Wisata') ? 'active' : '' }}">Destinasi</a>
+                <a href="{{ url('cagarbudaya') }}" class="nav-item nav-link 
+                {{ ($title == 'Cagar Budaya') ? 'active' : '' }}">Cagar Budaya</a>
                 <a href="{{ url('informasi') }}" class="nav-item nav-link 
                 {{ ($title == 'Layanan Informasi') ? 'active' : '' }}">Informasi</a>
                 <a href="{{ url('acara') }}" class="nav-item nav-link 
