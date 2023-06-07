@@ -73,7 +73,7 @@ class EventController extends Controller
         // gambar
         $image      = $request->file('image');
         $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-        Image::make($image)->resize(800, 800)->save('backend/upload/event/' . $name_gen);
+        Image::make($image)->resize(1080, 1440)->save('backend/upload/event/' . $name_gen);
         $gambar    = 'backend/upload/event/' . $name_gen;
 
         Event::insert([
@@ -155,7 +155,7 @@ class EventController extends Controller
             // gambar 1
             $image      = $request->file('image');
             $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(800, 800)->save('backend/upload/event/' . $name_gen);
+            Image::make($image)->resize(1080, 1440)->save('backend/upload/event/' . $name_gen);
             $gambar   = 'backend/upload/event/' . $name_gen;
 
             Event::findOrFail($id)->update([

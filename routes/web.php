@@ -54,6 +54,7 @@ Route::get('detail/{slug}', [DestinasiwisataController::class, 'detail'])->name(
 Route::post('order', [DestinasiwisataController::class, 'order'])->name('order');
 Route::get('informasi', [InformasiController::class, 'index'])->name('informasi');
 Route::get('acara', [AcaraController::class, 'index'])->name('acara');
+Route::get('acara/{slug}', [AcaraController::class, 'detailAcara'])->name('acara.detail');
 Route::get('kontakkami', [KontakController::class, 'index'])->name('kontakkami');
 Route::post('/pertanyaan', [KontakController::class, 'pertanyaan'])->name('kontak.tanya');
 Route::get('detail', [DetailwisataController::class, 'index'])->name('detail');
