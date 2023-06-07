@@ -13,7 +13,7 @@ $setting = App\Models\Setting::find(1);
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                <li class="breadcrumb-item active" aria-current="page">Tentang Kami</li>
             </ol>
         </nav>
     </div>

@@ -9,7 +9,7 @@
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                <li class="breadcrumb-item active" aria-current="page">Destinasi</li>
             </ol>
         </nav>
     </div>

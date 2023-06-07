@@ -10,7 +10,7 @@
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                <li class="breadcrumb-item active" aria-current="page">Event</li>
             </ol>
         </nav>
     </div>
@@ -31,107 +31,41 @@
 
 
         <!-- Team Start -->
-            <div class="container-xxl py-5">
-                <div class="container">
-                    <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                        <p class="fs-5 fw-bold text-primary">Event Acara</p>
-                        <h1 class="display-5 mb-5">Beragam Event Menarik Pekalongan</h1>
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <p class="fs-5 fw-bold text-primary">Event Acara</p>
+                    <h1 class="display-5 mb-5">Beragam Event Menarik Pekalongan</h1>
+                </div>
+                <div class="row g-4">
+
+                    @foreach ($event as $item)
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item rounded">
+                            <img class="img-fluid" src="{{ url($item->gambar) }}" alt="">
+                            <div class="team-text">
+                                <h4 class="mb-0">{{ $item->nama }}</h4>
+                                <p class="text-primary">{{ $item->alamat }}</p>
+                                <div class="team-social d-flex">
+                                    <a class="btn btn-square rounded-circle me-2"
+                                        href="{{ route('acara.detail', $item->slug) }}"><i class="fa fa-link"></i></a>
+                                    <a class="btn btn-square rounded-circle me-2" href=""><i
+                                            class="fab fa-youtube"></i></a>
+                                    <a class="btn btn-square rounded-circle me-2" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row g-4">
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="team-item rounded">
-                                <img class="img-fluid" src="assets/img/balon2.jpg" alt="">
-                                <div class="team-text">
-                                    <h4 class="mb-0">Balon Udara</h4>
-                                    <p class="text-primary">Kota Pekalongan</p>
-                                    <div class="team-social d-flex">
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fa fa-link"></i></a>
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="team-item rounded">
-                                <img class="img-fluid" src="assets/img/pekanraya.jpg" alt="">
-                                <div class="team-text">
-                                    <h4 class="mb-0">Pekan Raya</h4>
-                                    <p class="text-primary">Alun-alun Mataram</p>
-                                    <div class="team-social d-flex">
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fa fa-link"></i></a>
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="team-item rounded">
-                                <img class="img-fluid" src="assets/img/musik.jpg" alt="">
-                                <div class="team-text">
-                                    <h4 class="mb-0">Konser Musik</h4>
-                                    <p class="text-primary">Kota Pekalongan</p>
-                                    <div class="team-social d-flex">
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fa fa-link"></i></a>
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                                        <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                            
-                            
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="team-item rounded">
-                                    <img class="img-fluid" src="assets/img/streetfood.jpg" alt="">
-                                    <div class="team-text">
-                                        <h4 class="mb-0">Balon Udara</h4>
-                                        <p class="text-primary">Kota Pekalongan</p>
-                                        <div class="team-social d-flex">
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fa fa-link"></i></a>
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="team-item rounded">
-                                    <img class="img-fluid" src="assets/img/fashionweek.jpg" alt="">
-                                    <div class="team-text">
-                                        <h4 class="mb-0">Pekan Raya</h4>
-                                        <p class="text-primary">Alun-alun Mataram</p>
-                                        <div class="team-social d-flex">
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fa fa-link"></i></a>
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="team-item rounded">
-                                    <img class="img-fluid" src="assets/img/batikfes.jpg" alt="">
-                                    <div class="team-text">
-                                        <h4 class="mb-0">Konser Musik</h4>
-                                        <p class="text-primary">Kota Pekalongan</p>
-                                        <div class="team-social d-flex">
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fa fa-link"></i></a>
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                   
-                   
-                    </div>
+                    @endforeach
+
+
                 </div>
             </div>
+        </div>
         <!-- Team End -->
-            
+
     </div>
 </div>
 

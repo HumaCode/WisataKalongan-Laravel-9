@@ -186,7 +186,8 @@
                         <h4 class="mb-3">Destinasi Wisata</h4>
                         <p class="mb-4">Pekalongan memiliki beberapa destinasi wisata menarik untuk dikunjungi dari
                             pantai hingga Pegunungan.</p>
-                        <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        {{-- <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -202,7 +203,8 @@
                         <h4 class="mb-3">Cagar Budaya</h4>
                         <p class="mb-4">Pekalongan memiliki beberapa cagar budaya yang memiliki nilai sejarah dan
                             kebudayaan yang penting.</p>
-                        <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        {{-- <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -218,7 +220,8 @@
                         <h4 class="mb-3">Event Acara</h4>
                         <p class="mb-4">Sebagai kota yang aktif secara budaya dan sosial, Pekalongan sering
                             mengadakan berbagai acara dan event yang menarik.</p>
-                        <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        {{-- <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -234,7 +237,8 @@
                         <h4 class="mb-3">Panduan Wisata</h4>
                         <p class="mb-4">Pastikan anda telah mempersiapkan segala kebutuhan seperti tiket
                             transportasi, akomodasi, dan transportasi.</p>
-                        <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        {{-- <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -250,7 +254,8 @@
                         <h4 class="mb-3">Rencana Perjalanan</h4>
                         <p class="mb-4">Cek jadwal operasional tempat wisata yang ingin Anda kunjungi, serta
                             periksa apakah ada event khusus yang berlangsung.</p>
-                        <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        {{-- <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -266,7 +271,8 @@
                         <h4 class="mb-3">Informasi</h4>
                         <p class="mb-4">Segala bentuk informasi bisa anda dapatkan di website kami, website kami
                             selalu update informasi dalam satu hari 24 jam.</p>
-                        <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        {{-- <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -441,7 +447,7 @@
             <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
                 <p class="fs-5 fw-bold text-primary">Testimonial</p>
                 <h1 class="display-5 mb-5">Testimonial Dari Klien Kami!</h1>
-                <p class="mb-4">Testimonial ini dapat memberikan gambaran positif kepada calon pengunjung tentang 
+                <p class="mb-4">Testimonial ini dapat memberikan gambaran positif kepada calon pengunjung tentang
                     pengalaman orang lain yang telah mengunjungi tempat wisata tersebut.</p>
                 <a class="btn btn-primary py-3 px-4" href="">See More</a>
             </div>
@@ -450,17 +456,18 @@
                     <div class="testimonial-item">
                         <img class="img-fluid rounded mb-3" src="assets/img/fotoprofil1.jpg" alt="">
                         <p class="fs-6">
-                            Saya telah mencoba berbagai kegiatan menantang seperti hiking, menyelam, 
-                            dan menyusuri sungai. Tim instruktur yang berpengalaman 
-                            dan fasilitas yang baik membuat pengalaman saya menjadi luar biasa. 
+                            Saya telah mencoba berbagai kegiatan menantang seperti hiking, menyelam,
+                            dan menyusuri sungai. Tim instruktur yang berpengalaman
+                            dan fasilitas yang baik membuat pengalaman saya menjadi luar biasa.
                         </p>
                         <h4>Sarah Aprilia</h4>
                         <span>Selebgram</span>
                     </div>
                     <div class="testimonial-item">
                         <img class="img-fluid rounded mb-3" src="assets/img/fotoprofil2.jpg" alt="">
-                        <p class="fs-6">"Mereka sangat perhatian dan membantu dalam mengatur perjalanan saya. 
-                            Saya merasa aman dan nyaman selama perjalanan, dan mereka memberikan pengalaman yang tak terlupakan.
+                        <p class="fs-6">"Mereka sangat perhatian dan membantu dalam mengatur perjalanan saya.
+                            Saya merasa aman dan nyaman selama perjalanan, dan mereka memberikan pengalaman yang tak
+                            terlupakan.
                         </p>
                         <h4>Anwar Ibrahim</h4>
                         <span>Brand Ambasador</span>

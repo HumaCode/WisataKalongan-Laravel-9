@@ -25,12 +25,12 @@
                     <figure class="img-play-video">
 
                         {{-- <h2 class="section-title text-left mb-4">PANTAI WONOKERTO</h2> --}}
-                        <img src="{{ url($destinasi->gambar) }}" alt="Image" class="img-fluid rounded-20">
+                        <img src="{{ url($event->gambar) }}" alt="Image" class="img-fluid rounded-20">
                     </figure>
                 </div>
 
                 <div class="col-lg-6 offset-1">
-                    <h2 class="section-title text-left mb-4">{{ $destinasi->nama }}</h2>
+                    <h2 class="section-title text-left mb-4">{{ $event->nama }}</h2>
 
 
                     <table class="table">
@@ -38,32 +38,36 @@
                         <tbody>
                             <tr>
                                 <th scope="row" width="250">Nama Event</th>
-                                <td>{{ $destinasi->nama }}</td>
+                                <td>{{ $event->nama }}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Penyelenggara</th>
-                                <td>{{ $destinasi->harga_tiket }}</td>
+                                <td>{{ $event->penyelenggara }}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Tanggal Mulai</th>
-                                <td>{{ $destinasi->buka }}</td>
+                                <td>{{ tanggal_indonesia($event->tgl_mulai) }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tanggal Selesai</th>
+                                <td>{{ tanggal_indonesia($event->tgl_selesai) }}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Waktu</th>
-                                <td>{{ $destinasi->dilihat }} Kali</td>
+                                <td>{{ $event->waktu }}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Alamat</th>
-                                <td>{{ $destinasi->alamat }}</td>
+                                <td>{{ $event->alamat }}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Lokasi</th>
-                                <td><a href="{{ $destinasi->lokasi }}" class="btn btn-success btn-sm"
+                                <td><a href="{{ $event->lokasi }}" class="btn btn-success btn-sm"
                                         target="_blank">Klik</a></td>
                             </tr>
                             <tr>
                                 <th scope="row">Dilihat</th>
-                                <td>{{ $destinasi->dilihat }} Kali</td>
+                                <td>{{ $event->hint_event }} Kali</td>
                             </tr>
 
                         </tbody>
@@ -72,102 +76,9 @@
                 </div>
 
             </div>
-            <p>{!! $destinasi->deskripsi !!}</p>
 
+            <p>{!! $event->deskripsi !!}</p>
 
-            <!-- Quote Start -->
-            <div class="container-fluid quote my-5 py-5" data-parallax="scroll"
-                data-image-src="{{ url('assets/img/hutan.jpg') }}">
-                <div class="container py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-7">
-                            <div class="bg-white rounded p-4 p-sm-5 wow fadeIn" data-wow-delay="0.5s">
-                                <h1 class="display-5 text-center mb-5">Dapatkan Tiket</h1>
-                                <form action="{{ route('order') }}" method="post" enctype="multipart/form-data">
-                                    @csrf
-
-                                    <input type="hidden" name="destinasi_id" value="{{ $destinasi->id }}">
-
-                                    <div class="row g-3">
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" name="nama" class="form-control bg-light border-0"
-                                                    id="gname" placeholder="Gurdian Name" required>
-                                                <label for="gname">Nama Lengkap</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="email" name="email" class="form-control bg-light border-0"
-                                                    id="gmail" placeholder="Gurdian Email" required>
-                                                <label for="gmail">Email</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" name="tlp" class="form-control bg-light border-0"
-                                                    id="cname" placeholder="Child Name" required>
-                                                <label for="cname">Nomor HP/WA</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" name="bank" class="form-control bg-light border-0"
-                                                    id="cage" placeholder="Child Age" value="Bank BRI" readonly>
-                                                <label for="cage">Bank</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="number" name="jml_tiket" min="0"
-                                                    class="form-control bg-light border-0" id="cname"
-                                                    placeholder="Child Name" required>
-                                                <label for="cname">Jumlah Tiket</label>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <p>Rekening Bank BRI : <b>09220012129283283</b></p>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="number" min="0" name="nominal" min="0"
-                                                    class="form-control bg-light border-0" id="cname"
-                                                    placeholder="Child Name" required>
-                                                <label for="cname">Nominal</label>
-                                            </div>
-                                        </div>
-                                        <small class="text-danger">* Silahkan bayar tiket dengan metode tranfer ke
-                                            no
-                                            rekening diatas, dan kemudian upload bukti tranfer</small>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="file" name="image" min="0"
-                                                    class="form-control bg-light border-0" id="cname"
-                                                    placeholder="Child Name" accept=".jpg,.jpeg" required>
-                                                <label for="cname">Bukti Tranfer</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <textarea class="form-control bg-light border-0"
-                                                    placeholder="Leave a message here" name="ket_lain" id="message"
-                                                    style="height: 100px" required></textarea>
-                                                <label for="message">Keterangan</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 text-center">
-                                            <button class="btn btn-primary py-3 px-4" type="submit">Pesan
-                                                Sekarang</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Quote End -->
 
         </div>
     </div>
