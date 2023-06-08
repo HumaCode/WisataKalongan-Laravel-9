@@ -37,7 +37,7 @@
 
                         <tbody>
                             <tr>
-                                <th scope="row" width="250">Nama Event</th>
+                                <th scope="row" width="250">Nama Cagar Budaya</th>
                                 <td>{{ $budaya->nama }}</td>
                             </tr>
                             <tr>
