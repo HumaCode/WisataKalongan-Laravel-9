@@ -50,6 +50,7 @@ Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('destinasiwisata', [DestinasiwisataController::class, 'index'])->name('destinasiwisata');
 Route::get('cagarbudaya', [CagarbudayaController::class, 'index'])->name('cagarbudaya');
+Route::get('lihat/{slug}', [CagarbudayaController::class, 'detailBudaya'])->name('lihat.budaya');
 Route::get('detail/{slug}', [DestinasiwisataController::class, 'detail'])->name('detail.wisata');
 Route::post('order', [DestinasiwisataController::class, 'order'])->name('order');
 Route::get('informasi', [InformasiController::class, 'index'])->name('informasi');

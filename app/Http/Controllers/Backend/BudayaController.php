@@ -62,7 +62,7 @@ class BudayaController extends Controller
         // gambar
         $image      = $request->file('image');
         $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-        Image::make($image)->resize(800, 500)->save('backend/upload/budaya/' . $name_gen);
+        Image::make($image)->resize(1080, 1440)->save('backend/upload/budaya/' . $name_gen);
         $gambar    = 'backend/upload/budaya/' . $name_gen;
 
         Budaya::insert([
@@ -130,7 +130,7 @@ class BudayaController extends Controller
             // gambar 1
             $image      = $request->file('image');
             $name_gen   = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(800, 500)->save('backend/upload/budaya/' . $name_gen);
+            Image::make($image)->resize(1080, 1440)->save('backend/upload/budaya/' . $name_gen);
             $gambar   = 'backend/upload/budaya/' . $name_gen;
 
             Budaya::findOrFail($id)->update([

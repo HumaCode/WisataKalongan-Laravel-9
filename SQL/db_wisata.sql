@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jun 2023 pada 08.21
+-- Waktu pembuatan: 08 Jun 2023 pada 01.50
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -35,7 +35,7 @@ CREATE TABLE `budayas` (
   `lokasi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dilihat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gambar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deskripsi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `hint_budaya` int(11) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -46,7 +46,7 @@ CREATE TABLE `budayas` (
 --
 
 INSERT INTO `budayas` (`id`, `nama`, `slug`, `alamat`, `lokasi`, `dilihat`, `gambar`, `deskripsi`, `hint_budaya`, `created_at`, `updated_at`) VALUES
-(1, 'Petugas 2 update', 'petugas-2-update', 'asdasd', 'https://goo.gl/maps/rDXBdu1vRRbiuXtG9', '0', 'backend/upload/budaya/1765944014268039.jpg', '<div>jbugyyg<br>uhuhuuih</div>', 0, '2023-05-14 21:43:47', '2023-05-15 00:24:10');
+(1, 'Masjid Agung Jami\' Kauman', 'masjid-agung-jami-kauman', 'Kota Pekalongan', 'https://goo.gl/maps/F4DtGp7fUYfeC5Lb8', '3', 'backend/upload/budaya/1768096075824719.jpg', '<div><strong>Masjid Agung Al-Jami’ Kauman Pekalongan</strong> adalah sebuah masjid di Kota Pekalongan Jawa Tengah. Lokasi masjid ini berada di terletak di&nbsp; Jl. KH. Wahid Hasyim, Pekalongan, Provinsi Jawa Tengah atau alun alun kota Pekalongan. Masjid peninggalan sejarah ini menjadi salah satu ciri khas Kota Pekalongan. Meskipun telah dibangun beberapa Masjid baru yang tak kalah megahnya, namun Masjid Kauman ini tetap tak tergantikan sebagai simbol islami warga Pekalongan.<br><br></div><h1>Sejarah Masjid Agung Al Jami Kauman</h1><div>Dahulu nama dari masjid ini adalah Masjid Besar Pekalongan, kemudian dirubah dengan nama baru menjadi Masjid Agung Al Jami Pekalongan pada tahun 1968 atas saran dari Habib Ali bin Ahmad Al Atas.&nbsp;<br><br>Masjid Agung Al Jami Pekalongan dengan serambi masjid yang berada di sebelah kiri, dan menara masjid&nbsp; berada di pojok sana. Masjid ini dibangun oleh Raden Arjo Wirijo Tumenggung Adinegoro, bupati Pekalongan ketiga, pada tahun 1852 M. Saat itu masjid berukuran 35×35 meter dengan sembilan pintu besar, duabelas jendela, ruang imam dan kubah untuk khatib.<br><br>Menara Masjid Agung Al Jami Pekalongan setinggi 27 meter itu selesai dibangun pada bulan Januari 1933 M, yang dibiayai seluruhnya oleh Sayyid Husein bin Ahmad bin Syahab. Ada 99 anak tangga berputar yang harus didaki untuk menuju ke puncak menara.<br><br></div><h1>Arsitektur Masjid Jami Pekalongan</h1><div>Masjid Agung Al Jami Pekalongan berarsitektur Jawa-Arab. Ini bisa dilihat dari kubahnya yang berbentuk joglo. Sementara arsitek Arab nampak dari serambi masjid. Di depan ruangan masjid ada tiga ruangan. Di tengah tempat iman. Sebelah kanan mimbar tempat khatib memberikan ceramah, dan bagian kiri tadinya khusus tempat bupati saat itu beribadah. Namun kini ruangan tersebut sudah tak diistimewakan lagi. Di sebelah kanan bangunan masjid terdapat menara masjid. <br><br>Ruang utama dari Masjid Agung Al Jami Pekalongan ialah pilar-pilar kayu dan ornamen klasik yang masih asli, diperkuat 22 pilar beton penyangga. Atap kayunya juga masih asli menggunakan batang kayu dan tak ada sambungannya. Lengkung di tengah adalah menjadi tempat imam, di sebelah kanan tempat khatib, dan lengkung kubah di kiri dibangun pada 3 Juni 1907 oleh Bupati Adipati Aryonotodirjo untuk tempat bupati saat shalat Jum’at dan shalat Hari Raya.<br><br>Pada gapura dibagian tengah serambi Masjid Agung Pekalongan berbentuk segi empat dengan menara dan kubah kecil di setiap pojoknya serta lubang masuk lengkung. Terlihat dari jauh diatas puncak atap bangunan utama masjid yang berbentuk limasan tumpang. Arsitektur masjid ini menggabungkan gaya tradisional Jawa dengan gaya Timur Tengah.<br><br>Langit ruangan yang tinggi, dibantu dengan putaran kipas angin dalam jumlah banyak, membuat hawa di ruangan ini terasa cukup sejuk. Lantai keramik masjid yang biasanya sangat dingin telah tertutupi sebahagiannya dengan karpet sajadah warna dominan hijau dan ornamen putih.<br><br></div>', 0, '2023-05-14 21:43:47', '2023-06-07 18:41:09');
 
 -- --------------------------------------------------------
 
@@ -80,8 +80,8 @@ CREATE TABLE `destinasis` (
 --
 
 INSERT INTO `destinasis` (`id`, `nama`, `slug`, `kategori_id`, `alamat`, `lokasi`, `dilihat`, `tiket`, `harga_tiket`, `gambar`, `gambar2`, `gambar3`, `buka`, `deskripsi`, `deskripsi_singkat`, `hint_destinasi`, `created_at`, `updated_at`) VALUES
-(10, 'Pantai Pasir Kencana', 'pantai-pasir-kencana', 5, 'Jalan Pantai, Wonokerto, Panjang Wetan, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51153', 'https://goo.gl/maps/3dSEktVHsBTENm9b7', 0, 1, '15.000 - Hari Biasa, 20.000 - Hari Jumat sampai Minggu,  25.000 - Hari Besar', 'backend/upload/destinasi/1765793996515744.jpg', 'backend/upload/destinasi/1765793996622157.jpg', 'backend/upload/destinasi/1765794124573507.jpg', '14:00-20:00 - Minggu Libur', '<div>Pantai Pasir Kencana merupakan tempat wisata pantai kekinian yang lokasinya berada di Kota Pekalongan. Awas jangan sampai salah ya,,,kamu harus tahu bahwa Pekalongan itu ada Kabupatennya ada pula Kotanya.<br><br></div><div>Ya,,,semacam Bandung yang wilayahnya terbagi menjadi Kabupaten dan Kotamadya. Tempat wisata yang tersaji pun jelas akan berbeda, misalnya saja Kabupaten Pekalongan identik dengan tempat wisata alam seperti gunung, bukit, hingga curug atau air terjun.<br>Sedangkan Kota Pekalongan tempat wisatanya sekitar pantai dan juga laut, karena berbatasan langsung dengan Laut Jawa di sebelah utara. Selain itu, juga merupakan pelabuhan terpenting di Jawa Tengah.<br><br>Pantai Pasir Kencana mulai dibuka kembali pada bulan Maret 2022 kemarin, dengan mengusung tema wisata buatan kekinian yang menempati luas sekitar 1,5 Hektar. Berikut review yang dapat kami sajikan!<br><br><strong>Lokasi dan Alamat Pantai Pasir Kencana</strong></div><div>Alamat Pantai Pasir Kencana berada di Jalan Pantai, Wonokerto, Kelurahan Panjang Wetan, Kecamatan Pekalongan Utara, Kota Pekalongan, Jawa Tengah.<br><br><strong>Rute Menuju Pantai Pasir Kencana</strong></div><div>Rute menuju Pantai Pasir Kencana cukup dekat dari Alun-Alun Kota Pekalongan, dengan estimasi waktu sekitar 14 menit dan jarak tempuh kurang dari 5 km.</div><div>Yakni dengan mengambil arah ke jalan Hasanudin untuk menuju Jl. WR.Supratman hingga tiba di Panjang Wetan. Selanjutnya tinggal mencari lokasi dari Pantai Pasir Kencana, akses jalannya sudah beraspal dan dapat dilalui oleh kendaraan apapun.<br><br><strong>Jam Buka Pantai Pasir Kencana</strong></div><ul><li>Jam operasional Pantai Pasir Kencana buka mulai pukul 14.00 hingga 20.00</li><li>Setiap hari Selasa sampai Minggu</li><li>Sedangkan untuk hari Senin tutup</li></ul><div><strong>Harga Tiket Masuk Pantai Pasir Kencana</strong></div><ul><li>HTM Pantai Pasir Kencana&nbsp; sebesar Rp. 15.000,- per orang untuk weekdays</li><li>Setiap hari Jumat sampai dengan Minggu sebesar Rp. 20.000,-</li><li>Untuk hari libur dan hari besar lainnya sebesar Rp. 25.000,-</li></ul><div>Anak dengan tinggi badan di atas 80cm wajib membeli tiket masuk<br><br></div><div><strong>Fasilitas Pantai Pasir Kencana</strong></div><div>Beberapa fasilitas yang tersedia di Pantai Pasir Kencana Pekalongan ini diantaranya:</div><ul><li>Area parkir kendaraan yang luas,</li><li>Toilet,</li><li>Menara pandang,</li><li>Mushola,</li><li>Panggung hiburan,</li><li>Panggung budaya,</li><li>Jogging track,</li><li>Kamar bilas,</li><li>Tempat bilas di luar ruangan,</li><li>Air mancur,</li><li>Kios-kios makanan dan minuman,</li><li>Tempat untuk duduk-duduk,</li><li>Toko souvenir,</li></ul><div><br><br></div>', '<div>Pantai Pasir Kencana merupakan tempat wisata pantai kekinian yang lokasinya berada di Kota Peka...', 0, '2023-05-13 08:39:42', '2023-05-14 05:54:09'),
-(11, 'Museum Batik Kota Pekalongan', 'museum-batik-kota-pekalongan', 1, 'Jl. Jetayu No.3, Panjang Wetan, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51141', 'https://goo.gl/maps/5He8okxGNG8xAwH46', 0, 1, '5.000 - Dewasa & Umum, 1.000 - Anak-anak & Pelajar', 'backend/upload/destinasi/1765800368857545.jpg', 'backend/upload/destinasi/1765800369043939.jpg', 'backend/upload/destinasi/1765800369432338.jpg', '08:00-15:00', '<div>Museum ini didirikan pada 23 Mei 2006 dan diresmikan oleh Presiden Republik Indonesia, Bapak Dr. H. Susilo Bambang Yudhoyono pada 12 Juli 2006. Terwujudnya Museum Batik di Kota Pekalongan sebagai wadah untuk menggali, melestarikan dan mengembangkan batik sebagai warisan budaya bangsa Indonesia serta pusat informasi yang perlu dikembangkan, dibina dan dipelihara keberadaannya.</div><div>&nbsp;</div><div>Melalui berbagai program yang dicanangkan oleh Museum ini, diharapan dapat mendorong masyarakat Indonesia untuk peduli terhadap keberadaan Museum Batik di kota Pekalongan sebagai wujud turut serta dalam pelestarian budaya Indonesia.&nbsp; Museum ini sejak awal diniatkan sebagai pusat data dan informasi mengenai batik; sebagai pusat riset dan pengembangan ilmu dan pengembangan desain batik, perpustakaan dan sebagai acuan&nbsp; dalam seluruh hal-hal perbatikan; mengkoleksi batik klasik, batik lawasan dan batik kontemporer. Di samping itu, diharapkan menjadi dokumentasi, penelitian dan penyajian informasi serta mengkomunikasikannya kepada masyarakat agar dapat dimanfaatkan sepenuhnya bagi kepentingan masyarakat yang lebih luas.</div><div>&nbsp;</div><div>Sejak abad XIV-XVI Kota Pekalongan telah dikenal karya dan kegiatan membatik sebagai salah satu pokok penghidupan sebagian besar masyarakatnya. Tanggal 12 Juli 1972 perwakilan Departemen Pendidikan dan Kebudayaan Jawa Tengah cq. Kepala Bidang Permuseuman didukung oleh Walikota ke 10 (sepuluh) Drs. R. Soepomo mendirikan Museum Batik di Pekalongan yang terletak di tengah Kota Pekalongan,&nbsp; sebelah selatan kawasan Taman Hiburan Rakyat (THR) Gedung Bintang Merdeka yang sekarang dikawasan Pos Penjagaan Polisi (Posis) Jalan Resimen XVII.</div><div>&nbsp;</div><div>Museum Batik dengan luas 40 m2 dan bangunan yang sangat sederhana memamerkan 1149 koleksi batik, antara lain wayang beber dari kain batik yang berusia ratusan tahun serta alat tenun tradisional ATBM (Alat Tenun Bukan Mesin) maupun peralatan untuk proses membuat batik dan dikelola oleh Dinas Pendidikan dan Kebudayaan (P &amp; K) Kota Pekalongan.<br><br>Fasilitas&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:</div><div>Ruang koleksi batik</div><div>Ruang perpustakaan</div><div>Telecenter</div><div>Kedai batik</div><div>Ruang pertemuan</div><div>&nbsp;</div><div>Waktu operasional&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div>Senin – Minggu&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : 08.00 – 15.00 WIB</div><div>Hari Libur Nasional&nbsp; : Tutup</div><div>&nbsp;</div><div>Biaya tiket masuk :</div><div>Dewasa/umum&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Rp 5.000,- per orang</div><div>Anak-anak/pelajar&nbsp; &nbsp; : Rp 1.000,- per orang</div>', '<div>Museum ini didirikan pada 23 Mei 2006 dan diresmikan oleh Presiden Republik Indonesia, Bapak Dr...', 0, '2023-05-13 09:48:20', '2023-05-13 10:21:00');
+(10, 'Pantai Pasir Kencana', 'pantai-pasir-kencana', 5, 'Jalan Pantai, Wonokerto, Panjang Wetan, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51153', 'https://goo.gl/maps/3dSEktVHsBTENm9b7', 6, 1, '15.000 - Hari Biasa, 20.000 - Hari Jumat sampai Minggu,  25.000 - Hari Besar', 'backend/upload/destinasi/1765793996515744.jpg', 'backend/upload/destinasi/1765793996622157.jpg', 'backend/upload/destinasi/1765794124573507.jpg', '14:00-20:00 - Minggu Libur', '<div>Pantai Pasir Kencana merupakan tempat wisata pantai kekinian yang lokasinya berada di Kota Pekalongan. Awas jangan sampai salah ya,,,kamu harus tahu bahwa Pekalongan itu ada Kabupatennya ada pula Kotanya.<br><br></div><div>Ya,,,semacam Bandung yang wilayahnya terbagi menjadi Kabupaten dan Kotamadya. Tempat wisata yang tersaji pun jelas akan berbeda, misalnya saja Kabupaten Pekalongan identik dengan tempat wisata alam seperti gunung, bukit, hingga curug atau air terjun.<br>Sedangkan Kota Pekalongan tempat wisatanya sekitar pantai dan juga laut, karena berbatasan langsung dengan Laut Jawa di sebelah utara. Selain itu, juga merupakan pelabuhan terpenting di Jawa Tengah.<br><br>Pantai Pasir Kencana mulai dibuka kembali pada bulan Maret 2022 kemarin, dengan mengusung tema wisata buatan kekinian yang menempati luas sekitar 1,5 Hektar. Berikut review yang dapat kami sajikan!<br><br><strong>Lokasi dan Alamat Pantai Pasir Kencana</strong></div><div>Alamat Pantai Pasir Kencana berada di Jalan Pantai, Wonokerto, Kelurahan Panjang Wetan, Kecamatan Pekalongan Utara, Kota Pekalongan, Jawa Tengah.<br><br><strong>Rute Menuju Pantai Pasir Kencana</strong></div><div>Rute menuju Pantai Pasir Kencana cukup dekat dari Alun-Alun Kota Pekalongan, dengan estimasi waktu sekitar 14 menit dan jarak tempuh kurang dari 5 km.</div><div>Yakni dengan mengambil arah ke jalan Hasanudin untuk menuju Jl. WR.Supratman hingga tiba di Panjang Wetan. Selanjutnya tinggal mencari lokasi dari Pantai Pasir Kencana, akses jalannya sudah beraspal dan dapat dilalui oleh kendaraan apapun.<br><br><strong>Jam Buka Pantai Pasir Kencana</strong></div><ul><li>Jam operasional Pantai Pasir Kencana buka mulai pukul 14.00 hingga 20.00</li><li>Setiap hari Selasa sampai Minggu</li><li>Sedangkan untuk hari Senin tutup</li></ul><div><strong>Harga Tiket Masuk Pantai Pasir Kencana</strong></div><ul><li>HTM Pantai Pasir Kencana&nbsp; sebesar Rp. 15.000,- per orang untuk weekdays</li><li>Setiap hari Jumat sampai dengan Minggu sebesar Rp. 20.000,-</li><li>Untuk hari libur dan hari besar lainnya sebesar Rp. 25.000,-</li></ul><div>Anak dengan tinggi badan di atas 80cm wajib membeli tiket masuk<br><br></div><div><strong>Fasilitas Pantai Pasir Kencana</strong></div><div>Beberapa fasilitas yang tersedia di Pantai Pasir Kencana Pekalongan ini diantaranya:</div><ul><li>Area parkir kendaraan yang luas,</li><li>Toilet,</li><li>Menara pandang,</li><li>Mushola,</li><li>Panggung hiburan,</li><li>Panggung budaya,</li><li>Jogging track,</li><li>Kamar bilas,</li><li>Tempat bilas di luar ruangan,</li><li>Air mancur,</li><li>Kios-kios makanan dan minuman,</li><li>Tempat untuk duduk-duduk,</li><li>Toko souvenir,</li></ul><div><br><br></div>', '<div>Pantai Pasir Kencana merupakan tempat wisata pantai kekinian yang lokasinya berada di Kota Peka...', 0, '2023-05-13 08:39:42', '2023-05-14 05:54:09'),
+(11, 'Museum Batik Kota Pekalongan', 'museum-batik-kota-pekalongan', 1, 'Jl. Jetayu No.3, Panjang Wetan, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51141', 'https://goo.gl/maps/5He8okxGNG8xAwH46', 12, 1, '5.000 - Dewasa & Umum, 1.000 - Anak-anak & Pelajar', 'backend/upload/destinasi/1765800368857545.jpg', 'backend/upload/destinasi/1765800369043939.jpg', 'backend/upload/destinasi/1765800369432338.jpg', '08:00-15:00', '<div>Museum ini didirikan pada 23 Mei 2006 dan diresmikan oleh Presiden Republik Indonesia, Bapak Dr. H. Susilo Bambang Yudhoyono pada 12 Juli 2006. Terwujudnya Museum Batik di Kota Pekalongan sebagai wadah untuk menggali, melestarikan dan mengembangkan batik sebagai warisan budaya bangsa Indonesia serta pusat informasi yang perlu dikembangkan, dibina dan dipelihara keberadaannya.</div><div>&nbsp;</div><div>Melalui berbagai program yang dicanangkan oleh Museum ini, diharapan dapat mendorong masyarakat Indonesia untuk peduli terhadap keberadaan Museum Batik di kota Pekalongan sebagai wujud turut serta dalam pelestarian budaya Indonesia.&nbsp; Museum ini sejak awal diniatkan sebagai pusat data dan informasi mengenai batik; sebagai pusat riset dan pengembangan ilmu dan pengembangan desain batik, perpustakaan dan sebagai acuan&nbsp; dalam seluruh hal-hal perbatikan; mengkoleksi batik klasik, batik lawasan dan batik kontemporer. Di samping itu, diharapkan menjadi dokumentasi, penelitian dan penyajian informasi serta mengkomunikasikannya kepada masyarakat agar dapat dimanfaatkan sepenuhnya bagi kepentingan masyarakat yang lebih luas.</div><div>&nbsp;</div><div>Sejak abad XIV-XVI Kota Pekalongan telah dikenal karya dan kegiatan membatik sebagai salah satu pokok penghidupan sebagian besar masyarakatnya. Tanggal 12 Juli 1972 perwakilan Departemen Pendidikan dan Kebudayaan Jawa Tengah cq. Kepala Bidang Permuseuman didukung oleh Walikota ke 10 (sepuluh) Drs. R. Soepomo mendirikan Museum Batik di Pekalongan yang terletak di tengah Kota Pekalongan,&nbsp; sebelah selatan kawasan Taman Hiburan Rakyat (THR) Gedung Bintang Merdeka yang sekarang dikawasan Pos Penjagaan Polisi (Posis) Jalan Resimen XVII.</div><div>&nbsp;</div><div>Museum Batik dengan luas 40 m2 dan bangunan yang sangat sederhana memamerkan 1149 koleksi batik, antara lain wayang beber dari kain batik yang berusia ratusan tahun serta alat tenun tradisional ATBM (Alat Tenun Bukan Mesin) maupun peralatan untuk proses membuat batik dan dikelola oleh Dinas Pendidikan dan Kebudayaan (P &amp; K) Kota Pekalongan.<br><br>Fasilitas&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:</div><div>Ruang koleksi batik</div><div>Ruang perpustakaan</div><div>Telecenter</div><div>Kedai batik</div><div>Ruang pertemuan</div><div>&nbsp;</div><div>Waktu operasional&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div>Senin – Minggu&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : 08.00 – 15.00 WIB</div><div>Hari Libur Nasional&nbsp; : Tutup</div><div>&nbsp;</div><div>Biaya tiket masuk :</div><div>Dewasa/umum&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Rp 5.000,- per orang</div><div>Anak-anak/pelajar&nbsp; &nbsp; : Rp 1.000,- per orang</div>', '<div>Museum ini didirikan pada 23 Mei 2006 dan diresmikan oleh Presiden Republik Indonesia, Bapak Dr...', 0, '2023-05-13 09:48:20', '2023-05-13 10:21:00');
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `nama`, `slug`, `gambar`, `tgl_mulai`, `tgl_selesai`, `waktu`, `penyelenggara`, `deskripsi`, `alamat`, `lokasi`, `hint_event`, `created_at`, `updated_at`) VALUES
-(1, 'BAZAR UMKM RAMADHAN 1444 H KAB. PEKALONGAN Update', 'bazar-umkm-ramadhan-1444-h-kab-pekalongan-update', 'backend/upload/event/1765885421870243.jpg', '2023-03-30', '2023-04-12', '15:00-21:00 WIB', 'DINAS KOPERASI UKM TENAGA KERJA KAB. PEKALONGAN', '<div>DALAM RANGKA MEMPERLUAS PASAR PRODUK USAHA MIKRO DAN MEMBANTU MASYARAKAT MEMENUHI KEBUTUHAN PUASA DAN LEBARAN PEMERINTAH KAB. PEKALONGAN BEKERJASAMA DENGAN KEMENTERIAN KOPERASI DAN UKM RI MENYELENGGARAKAN<br><br>DIIKUTI 60 USAHA MIKRO DAN UMKM KAB. PEKALONGAN<br>DI DUKUNG BUMN, PERBANKAN, BUMD, SWASTA DAN INSTANSI KEMENTERIAN SERTA WIRAUSAHAWAN<br>CP. 081334261965</div>', 'PLUT KUMKM KAB. PEKALONGAN (GEDUNG UMKM CENTER) JL. RAYA WONOPRINGGO – MADUKARAN KAB. PEKALONGAN', 'https://goo.gl/maps/rDXBdu1vRRbiuXtG9', 0, '2023-05-14 07:35:58', '2023-05-14 08:52:52');
+(1, 'BAZAR UMKM RAMADHAN', 'bazar-umkm-ramadhan', 'backend/upload/event/1765885421870243.jpg', '2023-03-30', '2023-04-12', '15:00-21:00 WIB', 'DINAS KOPERASI UKM TENAGA KERJA KAB. PEKALONGAN', '<div>DALAM RANGKA MEMPERLUAS PASAR PRODUK USAHA MIKRO DAN MEMBANTU MASYARAKAT MEMENUHI KEBUTUHAN PUASA DAN LEBARAN PEMERINTAH KAB. PEKALONGAN BEKERJASAMA DENGAN KEMENTERIAN KOPERASI DAN UKM RI MENYELENGGARAKAN<br><br>DIIKUTI 60 USAHA MIKRO DAN UMKM KAB. PEKALONGAN<br>DI DUKUNG BUMN, PERBANKAN, BUMD, SWASTA DAN INSTANSI KEMENTERIAN SERTA WIRAUSAHAWAN<br>CP. 081334261965</div>', 'PLUT KUMKM KAB. PEKALONGAN (GEDUNG UMKM CENTER) JL. RAYA WONOPRINGGO – MADUKARAN KAB. PEKALONGAN', 'https://goo.gl/maps/rDXBdu1vRRbiuXtG9', 1, '2023-05-14 07:35:58', '2023-06-06 20:13:49'),
+(3, 'tes 1234 2323', 'tes-1234-2323', 'backend/upload/event/1768011773614746.png', '2023-06-07', '2023-06-17', '15:00-21:00 WIB', 'asd', '<div>asdasdasdasd</div>', 'asdasd', 'https://goo.gl/maps/rDXBdu1vRRbiuXtG9', 2, '2023-06-06 20:10:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -178,7 +179,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2023_05_14_130020_create_events_table', 4),
 (8, '2023_05_14_161617_create_orders_table', 5),
 (9, '2023_05_15_025506_create_budayas_table', 5),
-(10, '2023_06_05_013009_create_settings_table', 6);
+(10, '2023_06_05_013009_create_settings_table', 6),
+(11, '2023_06_06_092118_create_pertanyaans_table', 7);
 
 -- --------------------------------------------------------
 
@@ -194,7 +196,8 @@ CREATE TABLE `orders` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl_order` date NOT NULL,
   `bank` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nominal` int(11) NOT NULL,
+  `jml_tiket` int(11) DEFAULT NULL,
+  `nominal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gambar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ket_lain` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -205,8 +208,9 @@ CREATE TABLE `orders` (
 -- Dumping data untuk tabel `orders`
 --
 
-INSERT INTO `orders` (`id`, `nama`, `destinasi_id`, `tlp`, `email`, `tgl_order`, `bank`, `nominal`, `gambar`, `ket_lain`, `created_at`, `updated_at`) VALUES
-(1, 'Fulan bin Fuuulaaan', 10, '099298736627', 'fulan@gmail.com', '2023-05-15', 'BRI', 8000, '', '1 Tiket Dewasa', '2023-05-15 07:42:26', '2023-05-15 07:42:26');
+INSERT INTO `orders` (`id`, `nama`, `destinasi_id`, `tlp`, `email`, `tgl_order`, `bank`, `jml_tiket`, `nominal`, `gambar`, `ket_lain`, `created_at`, `updated_at`) VALUES
+(1, 'Fulan bin Fuuulaaan', 10, '099298736627', 'fulan@gmail.com', '2023-05-15', 'BRI', 2, '8000', '', '1 Tiket Dewasa', '2023-05-15 07:42:26', '2023-05-15 07:42:26'),
+(3, 'tes', 11, '23423423423', 'tes@gmail.com', '2023-06-06', 'Bank BRI', 1, '5000', 'backend/upload/order/1767923086913469.jpg', '1 Dewasa', '2023-06-05 20:40:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -242,6 +246,29 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `pertanyaans`
+--
+
+CREATE TABLE `pertanyaans` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `pertanyaans`
+--
+
+INSERT INTO `pertanyaans` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'amir zakaria', 'admin@gmail.com', 'activated account', 'aksjasoaihsdoijaspdihiaos asjiajsdijaocjoadc', '2023-06-06 02:31:28', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `settings`
 --
 
@@ -270,7 +297,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `title`, `tentang`, `meta_keyword`, `meta_description`, `meta_author`, `alamat`, `tlp`, `email`, `facebook`, `youtube`, `twitter`, `ig`, `logo`, `hint_website`, `created_at`, `updated_at`) VALUES
-(1, 'Wisata Kalongan', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore placeat mollitia assumenda facere omnis quidem ab. Debitis quis perferendis optio suscipit assumenda, deserunt modi sequi vero neque aut, quasi soluta natus aperiam aspernatur aliquid beatae tes 12 121212 2332 32kwmkas dksda', 'wisata kalongan 1', 'Wisata Kalongan ads', 'Tes 123', 'jl. pososugih No. 10', '0909090902127 asdadasd', 'tes@gmail.com asdasd', 'https://www.facebook.com/erer', 'https://www.youtube.com/ere', 'https://twitter.com/ere', 'https://www.instagram.com/tte', 'backend/img/1767845778949964.png', 31, '2023-06-05 02:06:38', '2023-06-05 00:28:06');
+(1, 'Wisata Kalongan', 'Kami berkomitmen untuk menyajikan informasi yang akurat, terkini, dan berguna bagi para pengunjung kami. Tim kami bekerja keras untuk menghadirkan konten yang menarik, foto-foto menakjubkan, dan saran-saran yang berguna untuk membantu Anda merencanakan perjalanan yang sempurna. Pekalongan adalah sebuah kota yang terletak di Provinsi Jawa Tengah, Indonesia. Kota ini memiliki potensi wisata yang menarik dengan berbagai destinasi dan atraksi yang dapat dinikmati oleh para pengunjung.', 'wisata kalongan 1', 'Wisata Kalongan ads', 'Tes 123', 'jl. pososugih No. 10', '0909090902127 asdadasd', 'tes@gmail.com', 'https://www.facebook.com/', 'https://www.youtube.com/', 'https://twitter.com/', 'https://www.instagram.com/', 'backend/img/1767851105304534.png', 46, '2023-06-05 02:06:38', '2023-06-06 02:15:42');
 
 -- --------------------------------------------------------
 
@@ -361,6 +388,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indeks untuk tabel `pertanyaans`
+--
+ALTER TABLE `pertanyaans`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `settings`
 --
 ALTER TABLE `settings`
@@ -393,7 +426,7 @@ ALTER TABLE `destinasis`
 -- AUTO_INCREMENT untuk tabel `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -411,19 +444,25 @@ ALTER TABLE `kategoris`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `pertanyaans`
+--
+ALTER TABLE `pertanyaans`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `settings`

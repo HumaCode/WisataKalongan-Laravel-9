@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('lokasi');
             $table->string('dilihat');
             $table->string('gambar');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->integer('hint_budaya');
             $table->timestamps();
         });
