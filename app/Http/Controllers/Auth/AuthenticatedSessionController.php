@@ -50,7 +50,7 @@ class AuthenticatedSessionController extends Controller
 
         $notification = array(
             'message'       => 'Berhasil logout..!!',
-            'alert-type'    => 'success',
+            'alert-type'    => 'info',
         );
 
         return redirect('/login')->with($notification);

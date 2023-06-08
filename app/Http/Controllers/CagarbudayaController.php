@@ -21,7 +21,7 @@ class CagarbudayaController extends Controller
     {
 
         $data = [
-            "title"         => "Destinasi Wisata",
+            "title"         => "Cagar Budaya",
             "budaya"        => Budaya::where('slug', $slug)->first(),
         ];
 

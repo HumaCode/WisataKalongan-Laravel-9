@@ -2,7 +2,7 @@
 $id = Auth::user()->id;
 $adminData = App\Models\User::find($id);
 $setting = App\Models\Setting::find(1);
-$destinasi = App\Models\Destinasi::count();;
+$destinasi = App\Models\Destinasi::count();
 @endphp
 
 <!DOCTYPE html>

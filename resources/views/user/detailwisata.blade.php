@@ -9,7 +9,7 @@
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                <li class="breadcrumb-item active" aria-current="page">Detail Wisata</li>
             </ol>
         </nav>
     </div>
@@ -46,7 +46,13 @@
                             </tr>
                             <tr>
                                 <th scope="row">Harga Tiket</th>
-                                <td>{{ $destinasi->harga_tiket }}</td>
+                                <td>
+                                    @if ($destinasi->tiket == 1)
+                                    {{ $destinasi->harga_tiket }}
+                                    @else
+                                    <strong class="text-danger">GRATIS</strong>
+                                    @endif
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Jam Operasional</th>
@@ -71,6 +77,7 @@
             <p>{!! $destinasi->deskripsi !!}</p>
 
 
+            @if ($destinasi->tiket ==1)
             <!-- Quote Start -->
             <div class="container-fluid quote my-5 py-5" data-parallax="scroll"
                 data-image-src="{{ url('assets/img/hutan.jpg') }}">
@@ -164,6 +171,8 @@
                 </div>
             </div>
             <!-- Quote End -->
+            @endif
+
 
         </div>
     </div>

@@ -12,11 +12,18 @@ use Intervention\Image\Facades\Image;
 
 class DestinasiwisataController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+
+        if ($request->filled('q')) {
+            $models = Destinasi::search($request->q)->get();
+        } else {
+            $models = Destinasi::orderBy('id', 'DESC')->get();
+        }
+
         $data = [
             "title"     => "Destinasi Wisata",
-            "destinasi" => Destinasi::orderBy('id', 'DESC')->get(),
+            "destinasi" => $models,
         ];
         return view("user.destinasi", $data);
     }

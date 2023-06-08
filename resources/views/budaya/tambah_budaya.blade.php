@@ -135,7 +135,7 @@
                                         <label class="custom-file-label" for="image">Pilih Foto</label>
                                     </div>
                                 </div>
-                                <small>* ukuran gambar 800x500 pixel</small><br>
+                                <small>* ukuran gambar 1080x1440 pixel</small><br>
 
                                 @error('image')
                                 <span class="text-danger">{{ $message }}</span>
