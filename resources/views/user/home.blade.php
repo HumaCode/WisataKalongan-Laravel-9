@@ -1,3 +1,8 @@
+@php
+$kunjungan = App\Models\Setting::find(1);
+$destinasi = App\Models\Destinasi::count();
+@endphp
+
 @extends('layout.main')
 @section('content')
 

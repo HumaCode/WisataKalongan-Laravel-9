@@ -12,8 +12,6 @@ class HomeController extends Controller
     {
         $data = [
             "title"     => "Home",
-            "destinasi" => Destinasi::count(),
-            "kunjungan" => Setting::find(1),
         ];
         return view("user.home", $data);
     }   //
