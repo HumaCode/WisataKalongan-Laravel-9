@@ -19,6 +19,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TiketController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +60,7 @@ Route::get('acara/{slug}', [AcaraController::class, 'detailAcara'])->name('acara
 Route::get('kontakkami', [KontakController::class, 'index'])->name('kontakkami');
 Route::post('/pertanyaan', [KontakController::class, 'pertanyaan'])->name('kontak.tanya');
 Route::get('detail', [DetailwisataController::class, 'index'])->name('detail');
+Route::get('/tiket', [TiketController::class, 'tiket'])->name('tiket');
 
 
 Route::get('/dashboard', function () {
